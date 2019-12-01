@@ -1,0 +1,29 @@
+body{
+  font-family: 'Righteous', cursive;
+  background-color: #F1F7EE;
+}
+
+.container-fluid{
+  margin-top:5vh;
+  position: relative;
+}
+
+.col-3 {
+  margin-left: 20px;
+  border-left: solid 2px gray;
+  position: fixed;
+}
+
+.col-3 a{
+  border-bottom: solid 1px gray;
+  color: #893BA0;
+}
+
+.col-3 a:hover{
+  color: #542363;
+}
+
+.container{
+  margin-left: 30%;
+  position: absolute;
+}
