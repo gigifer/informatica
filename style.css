@@ -10,10 +10,6 @@
   height: 200px;
 }
 
-#buscador nav{
-  padding-left: 100px;
-}
-
 #botBuscar{
   background-color: white;
 }
@@ -36,10 +32,11 @@ ul{
 }
 
 .nombre{
-  font-size: 30px;
+  font-size: 2em;
   text-align: center;
-  padding-top: 30px;
+  padding-top: 5%;
   font-family: 'Playfair Display', serif;
+  font-weight: 700;
 }
 
 .nombre img{
@@ -49,12 +46,15 @@ ul{
 
 .carrito i{
   color: #07BA3D;
-  font-size: 60px;
-  padding-right: 50px;
-  padding-top: 70px;
+  font-size: 3em;
+  padding-top: 20%;
 }
 
 #misCompras{
   font-family: 'Righteous', cursive;
   padding-top: 15px;
+}
+
+.pieDePagina{
+  background-color: #07BA3D;
 }
