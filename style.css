@@ -1,4 +1,10 @@
 /*HEADER*/
+#titulodepagina{
+  display: inline;
+  font-family: 'Righteous', cursive;
+  font-size: 45px;
+  margin-left: 5px;
+}
 
 #barraNav{
   background-color: #07BA3D;
@@ -46,9 +52,10 @@ input{
   margin-bottom: 25px;
 }
 
-.nombre img{
-  width: 80px;
-  height: 80px;
+#logodepagina{
+  width: 60px;
+  height: 60px;
+  margin-bottom: 15px;
 }
 
 .carrito i{
