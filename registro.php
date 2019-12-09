@@ -1,5 +1,5 @@
 <?php
-
+  $placeholder = ["Nombre de usuario", "E-mail", "Contraseña", "Conmfirmar Contraseña"];
  ?>
 
  <!doctype html>
@@ -12,26 +12,25 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Righteous&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="css/registro.css">
+    <script src="https://kit.fontawesome.com/acf02b5d89.js" crossorigin="anonymous"></script>
     <title>Registro - Mapache</title>
   </head>
   <body>
-
+<?php include 'header.php' ?>
     <div class="container-fluid">
       <div class="container">
+        <div class="todo">
         <h2>Completá tus datos</h2><br>
+        <div class="cuadro">
         <div class="row">
-          <div class="col-xs-12 col-md-6">
-            <input type="text" name="" value="" placeholder="Nombre de Usuario">
-          </div>
-          <div class="col-xs-12 col-md-6">
-            <input type="text" name="" value="" placeholder="E-mail">
-          </div>
-          <div class="col-xs-12 col-md-6">
-            <input type="text" name="" value="" placeholder="Contraseña">
-          </div>
-          <div class="col-xs-12 col-md-6">
-            <input type="text" name="" value="" placeholder="Confirmar Contraseña">
+
+            <?php for ($i=0; $i < count($placeholder); $i++) :?>
+              <div class="col-xs-12 col-md-6">
+                <input type="text" name="" value="" placeholder="<?= $placeholder[$i] ?>">
+              </div>
+            <?php endfor; ?>
           </div>
         </div>
 
@@ -40,9 +39,10 @@
           <button type="button" class="btn btn-primary">Crear Cuenta</button>
 
         </div>
-
+        </div>
       </div>
     </div>
+    <?php include 'footer.php' ?>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

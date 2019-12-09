@@ -10,15 +10,15 @@ body{
 
 .cuadro{
   background-color: white;
-  margin: 0 auto;
   border: solid 2px gray;
   border-radius: 5px;
   padding: 20px;
+  width: 100%;
 }
 
 .cuadro input{
   margin: 10px;
-  width: 70%;
+  width: 100%;
   border-top: none;
   border-right: none;
   border-bottom: solid 2px gray;

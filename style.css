@@ -1,0 +1,93 @@
+/*HEADER*/
+
+#barraNav{
+  background-color: #07BA3D;
+  font-family: 'Righteous', cursive;
+  font-size: 20px;
+}
+
+#buscador{
+  background-color: #50514F;
+  overflow: hidden;
+}
+
+#botBuscar{
+  background-color: white;
+  width: 30%;
+  margin-left: 10px;
+}
+
+input{
+  width: 60%;
+}
+
+.dropdown-menu a:hover {
+    background-color: #50514F;
+    color: #FFF;
+    background-image: none;
+}
+
+.buscar{
+  float: left;
+  padding-left: 0px;
+}
+
+.form-inline{
+  padding-top: 35px;
+}
+
+.nombre{
+  font-size: 2em;
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  float: left;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+.nombre img{
+  width: 80px;
+  height: 80px;
+}
+
+.carrito i{
+  color: #07BA3D;
+  font-size: 40px;
+  width: 100%;
+  padding-top: 20%;
+  float: left;
+  text-align: center;
+  padding-top: 30px;
+}
+
+#misCompras{
+  font-family: 'Righteous', cursive;
+  width: 100%;
+  text-align: center;
+}
+
+/*footer*/
+
+.pieDePagina{
+  background-color: #50514F;
+}
+
+#linksAyuda{
+  font-family: 'Righteous', cursive;
+  padding-top: 15px;
+  font-size: 1em;
+}
+
+.iconoRedes{
+  color: #07BA3D;
+  font-size: 2em;
+}
+
+#redes :hover{
+  color: #07BA3D;
+}
+.container-fluid{
+  padding-left: 0px;
+  padding-right: 0px;
+}
