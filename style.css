@@ -2,24 +2,23 @@
 
 #barraNav{
   background-color: #07BA3D;
-  height: 80px;
+  font-family: 'Righteous', cursive;
+  font-size: 20px;
 }
 
 #buscador{
   background-color: #50514F;
-  height: 200px;
-}
-
-#buscador nav{
-  padding-left: 100px;
+  overflow: hidden;
 }
 
 #botBuscar{
   background-color: white;
+  width: 30%;
+  margin-left: 10px;
 }
 
-ul{
-  width: 100%;
+input{
+  width: 60%;
 }
 
 .dropdown-menu a:hover {
@@ -28,35 +27,65 @@ ul{
     background-image: none;
 }
 
-.itemMenu{
-  width: 25%;
-  text-align: center;
-  font-family: 'Righteous', cursive;
-  font-size: 20px;
+.buscar{
+  float: left;
+  padding-left: 0px;
+}
+
+.form-inline{
+  padding-top: 35px;
 }
 
 .nombre{
-  font-size: 30px;
+  font-size: 2em;
   text-align: center;
-  padding-top: 30px;
   font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  float: left;
+  margin-top: 25px;
+  margin-bottom: 25px;
 }
 
 .nombre img{
-  width: 85px;
-  height: 85px;
+  width: 80px;
+  height: 80px;
 }
 
 .carrito i{
   color: #07BA3D;
-  font-size: 60px;
-  padding-right: 50px;
-  padding-top: 70px;
+  font-size: 40px;
+  width: 100%;
+  padding-top: 20%;
+  float: left;
+  text-align: center;
+  padding-top: 30px;
 }
 
 #misCompras{
   font-family: 'Righteous', cursive;
+  width: 100%;
+  text-align: center;
+}
+
+/*footer*/
+
+.pieDePagina{
+  background-color: #50514F;
+}
+
+#linksAyuda{
+  font-family: 'Righteous', cursive;
   padding-top: 15px;
+  font-size: 1em;
+}
+
+.iconoRedes{
+  color: #07BA3D;
+  font-size: 2em;
+}
+
+#redes :hover{
+  color: #07BA3D;
 }
 .container-fluid{
   padding-left: 0px;
