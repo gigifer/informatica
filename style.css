@@ -87,3 +87,7 @@ input{
 #redes :hover{
   color: #07BA3D;
 }
+.container-fluid{
+  padding-left: 0px;
+  padding-right: 0px;
+}
