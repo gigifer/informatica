@@ -1,3 +1,8 @@
+.container-fluid{
+ padding-right: 0px;
+ padding-left: 0px;
+}
+
 /*HEADER*/
 #titulodepagina{
   display: inline;
@@ -15,6 +20,8 @@
 #buscador{
   background-color: #50514F;
   overflow: hidden;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 #botBuscar{
@@ -49,7 +56,6 @@ input{
   font-weight: 700;
   float: left;
   margin-top: 25px;
-  margin-bottom: 25px;
 }
 
 #logodepagina{
@@ -65,13 +71,20 @@ input{
   padding-top: 20%;
   float: left;
   text-align: center;
-  padding-top: 30px;
+  padding-top: 20px;
+  padding-bottom: 5px;
 }
 
 #misCompras{
   font-family: 'Righteous', cursive;
   width: 100%;
   text-align: center;
+  padding-bottom: 10px
+}
+
+/* CARRUSEL */
+#carrusel{
+  width: 101%;
 }
 
 /*footer*/
@@ -94,7 +107,38 @@ input{
 #redes :hover{
   color: #07BA3D;
 }
-.container-fluid{
-  padding-left: 0px;
-  padding-right: 0px;
+
+/* VISTA DE PRODUCTO */
+.foto-producto-vista img{
+  width: 100%;
+  padding: 30px;
+}
+
+.precio-producto-vista{
+  border-left: 2px solid rgb(155, 158, 152, 0.5);
+  padding: 50px;
+}
+.precio-producto-vista button{
+  background-color: #893ba0;
+  color: #ffffff;
+  border-radius: 35px;
+  padding: 10px;
+  font-weight: 400;
+}
+.precio-producto-vista p{}
+
+.precio-producto-vista #Nombre-del-producto{
+  text-align: center;
+  font-weight: bolder;
+  font-size: 25px;
+}
+.precio-producto-vista #precio{
+  text-align: center;
+  font-weight: bolder;
+  font-size: 20px;
+  border-left: 2px solid rgba(#00ff21, 0.5);
+}
+
+.precio-producto-vista .botones{
+  text-align: center;
 }
