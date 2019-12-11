@@ -6,7 +6,7 @@
     </div>
     <div class="buscar col-sm-12 col-md-5 col-lg-5">
       <form class="form-inline d-flex justify-content-center" >
-        <input class="rounded-pill" type="search" aria-label="Search">
+        <input class="rounded-pill" type="search" aria-label="Search" id="inputBuscador">
         <button id= "botBuscar" class="btn btn-outline-success rounded-pill" type="submit">Buscar</button>
       </form>
     </div>
