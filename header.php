@@ -1,5 +1,6 @@
 <header>
   <div class="row" id="buscador">
+<<<<<<< HEAD
     <div class="nombre text-white col-sm-12 col-md-5 col-lg-5">
       <img src="Logo-Mapache.png" alt="logo">
       Mapache
@@ -7,13 +8,26 @@
     <div class="buscar col-sm-12 col-md-5 col-lg-5">
       <form class="form-inline d-flex justify-content-center" >
         <input class="rounded-pill" type="search" aria-label="Search">
+=======
+    <div class="nombre text-white col-sm-12 col-md-5 col-lg-5 ">
+      <img id="logodepagina" src="Logo-Mapache.png" alt="logo">
+      <h1 id= "titulodepagina">Mapache</h1>
+    </div>
+    <div class="buscar col-sm-12 col-md-5 col-lg-5">
+      <form class="form-inline d-flex justify-content-center" >
+        <input class="rounded-pill" type="search" aria-label="Search" id="inputBuscador">
+>>>>>>> d5e056c45b8a70d741488112d4650c6b5c75503d
         <button id= "botBuscar" class="btn btn-outline-success rounded-pill" type="submit">Buscar</button>
       </form>
     </div>
 
     <div class="col-sm-12 col-md-2 col-lg-2">
       <div class="carrito">
+<<<<<<< HEAD
         <i class="fas fa-cart-arrow-down"></i>
+=======
+          <a href="#"><i class="fas fa-cart-arrow-down"></i></a>
+>>>>>>> d5e056c45b8a70d741488112d4650c6b5c75503d
       </div>
       <div id="misCompras">
         <a class="text-white" href="#">Mis compras</a>

@@ -1,0 +1,17 @@
+body{
+  font-family: 'Righteous', cursive;
+}
+
+.cuadro{
+  width: 100%;
+  margin-top: 10vh;
+  margin-bottom: 10vh;
+  border: solid 2px gray;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.btn{
+  background-color: #893BA0;
+  color: white;
+}

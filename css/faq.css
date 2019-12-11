@@ -3,7 +3,7 @@ body{
   background-color: #F1F7EE;
 }
 
-.container-fluid{
+.contenedor{
   margin-top:5vh;
   position: relative;
 }
@@ -23,7 +23,6 @@ body{
   color: #542363;
 }
 
-.container{
+.cuadro{
   margin-left: 30%;
-  position: absolute;
 }

@@ -42,43 +42,53 @@ $respuestas=[$registro, $login, $carro, $pago, $pedido, $politica, $contacto, $c
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/faq.css">
     <link href="https://fonts.googleapis.com/css?family=Righteous&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/faq.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/acf02b5d89.js" crossorigin="anonymous"></script>
+
     <title>FAQ - Mapache</title>
   </head>
   <body>
     <!-- header -->
-
+    <?php include 'header.php' ?>
     <!-- faq -->
+  <section>
     <div class="container-fluid">
-        <div class="row">
-          <div class="col-3">
-            <ul class="nav flex-column">
-              <?php for ($i=0; $i < count($faq); $i++) :?>
-                <li class="nav-item">
-                  <a class="nav-link" href="#Preguntas<?= $i?>"><?= $faq[$i]; ?></a>
-                <?php endfor; ?>
-            </ul>
-          </div>
-
-          <div class="container">
-            <?php for ($i=0; $i < count($respuestas); $i++) :?>
-              <div class="preguntas" id="Preguntas<?=$i?>">
-                <h3>
-                  <?= $faq[$i] . "</br>";?>
-                </h3>
-                <p>
-                  <?= $respuestas[$i] . "</br> </br>"; ?>
-                </p>
+      <div class="contenedor">
+          <div class="row">
+            <div class="dentro">
+              <div class="col-3">
+                <ul class="nav flex-column">
+                  <?php for ($i=0; $i < count($faq); $i++) :?>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#Preguntas<?= $i?>"><?= $faq[$i]; ?></a>
+                    <?php endfor; ?>
+                </ul>
               </div>
-            <?php endfor; ?>
-          </div>
 
-        </div>
+              <div class="container">
+                <div class="cuadro">
+                  <?php for ($i=0; $i < count($respuestas); $i++) :?>
+                    <div class="preguntas" id="Preguntas<?=$i?>">
+                      <h3>
+                        <?= $faq[$i] . "</br>";?>
+                      </h3>
+                      <p>
+                        <?= $respuestas[$i] . "</br> </br>"; ?>
+                      </p>
+                    </div>
+                  <?php endfor; ?>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
     </div>
+  </section>
 
     <!-- footer -->
-
+    <?php include 'footer.php' ?>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

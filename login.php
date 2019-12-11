@@ -22,30 +22,29 @@ $placeholder = ["Usuario", "Contraseña"];
    <div class="container-fluid">
      <div class="container">
        <div class="todo">
-
-
-       <h2>Ingresá tu Usuario y tu contraseña</h2><br>
-       <div class="row">
-         <div class="cuadro">
-           <?php for ($i=0; $i < count($placeholder); $i++) :?>
-             <div class="col-12">
-               <input type="text" name="" value="" placeholder="<?= $placeholder[$i]; ?>">
-             </div>
-           <?php endfor; ?>
-
+         <h2>Ingresá tu Usuario y tu contraseña</h2><br>
+         <div class="row">
+           <div class="cuadro">
+             <form>
+              <div class="form-group">
+                <label for="exampleInputEmail1">E-mail</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                <small id="emailHelp" class="form-text text-muted">No compartiremos tu e-mail.</small>
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">Contraseña</label>
+                <input type="password" class="form-control" id="exampleInputPassword1">
+              </div>
+              <div class="form-group form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label" for="exampleCheck1">Recordarme</label>
+              </div>
+              <button type="submit" class="btn btn-primary">Enviar</button>
+            </form>
+           </div>
+         </div>
        </div>
-
-
-      </div>
-      <div class="boton">
-        <input type="checkbox" name="" value="">Recordar <br>
-        <button type="button" class="btn btn-primary">Ingresar</button>
-        <a href="#">Olvidé mi contraseña</a><br>
-
-      </div>
      </div>
-     </div>
-
    </div>
 
    <?php include 'footer.php' ?>

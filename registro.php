@@ -12,13 +12,13 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Righteous&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="css/registro.css">
+    <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/acf02b5d89.js" crossorigin="anonymous"></script>
     <title>Registro - Mapache</title>
   </head>
   <body>
-<?php include 'header.php' ?>
+    <?php include 'header.php' ?>
     <div class="container-fluid">
       <div class="container">
         <div class="todo">
@@ -36,7 +36,7 @@
 
         <div class="boton">
           <input type="checkbox" name="" value="">Deseo recibir información <br>
-          <button type="button" class="btn btn-primary">Crear Cuenta</button>
+          <button type="submit" class="btn btn-primary">Crear Cuenta</button>
 
         </div>
         </div>
