@@ -13,10 +13,10 @@
 
     <div class="col-sm-12 col-md-2 col-lg-2">
       <div class="carrito">
-          <a href="#"><i class="fas fa-cart-arrow-down"></i></a>
+          <a href="carrito.php"><i class="fas fa-cart-arrow-down"></i></a>
       </div>
       <div id="misCompras">
-        <a class="text-white" href="#">Mis compras</a>
+        <a class="text-white" href="carrito.php">Mis compras</a>
       </div>
     </div>
   </div>
@@ -24,7 +24,7 @@
     <div class="row">
       <ul class="nav container-fluid" id=barraNav>
         <li class="nav-item text-center text-white col-sm-12 col-md-3 col-lg-3">
-        <a class="nav-link active text-white" href="#">Home</a>
+        <a class="nav-link active text-white" href="index.php">Home</a>
         </li>
       <li class="nav-item dropdown text-center col-sm-12 col-md-3 col-lg-3">
         <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -38,10 +38,10 @@
         </div>
       </li>
       <li class="nav-item text-center col-sm-12 col-md-3 col-lg-3">
-        <a class="nav-link active text-white" href="#">Registrate</a>
+        <a class="nav-link active text-white" href="registro.php">Registrate</a>
       </li>
       <li class="nav-item text-center col-sm-12 col-md-3 col-lg-3">
-        <a class="nav-link active text-white" href="#">Ingresá</a>
+        <a class="nav-link active text-white" href="login.php">Ingresá</a>
       </li>
     </ul>
     </div>
