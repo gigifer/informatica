@@ -21,20 +21,19 @@
 
 <div class="row">
   <div class="foto-producto-vista col-sm-12 col-md-7 col-lg-7">
-    <img src="img/foto-producto.jpg" alt="Foto del producto">
+    <img src="img/notebook1.jpg" alt="Foto del producto">
   </div>
   <div class="precio-producto-vista col-sm-12 col-md-5 col-lg-5">
-    <p id="Nombre-del-producto">Monitor Samsung de 24 pulgadas., Negro 24 - pulgadas</p>
-    <br>
-    <p>Tamaño: 24 - pulgadas 24" 1920 x 1080
-      <br>
-      Soporte de inclinación, panel VA, HDMI/VGA, 1 ms, alimentación externa.
-      <br>
-      3 años de garantía.
-</p>
-
+    <p id="Nombre-del-producto">Acer Spin 3 14" HD, Muti-Touch, portátil 2 en 1, procesador Intel Core i3-8130U, 8 GB de RAM, 256 GB SSD, HDMI, 2 × USB 3.1 (tipo A), lector de tarjeta digital seguro, Windows 10</p>
 <br>
-
+<ul>
+  <li>Procesador Intel Core i3-8145U de 8ª generación (hasta 3,9 GHz) 4 GB de memoria DDR4, 128 GB PCIe NVMe SSD</li>
+  <li>Pantalla IPS Full HD (1920 x 1080) panorámica retroiluminada por LED de 15,6” Intel UHD Graphics 620</li>
+  <li>1 puerto USB 3.1 tipo C Gen 1, 2 puertos USB 3.1 Gen 1 (uno con carga de apagado), 1 puerto USB 2.0 y 1 puerto HDMI 2.0.</li>
+  <li>802.11ac WiFi Teclado retroiluminado de hasta 9,5 horas de duración de la batería</li>
+  <li>Windows 10 en modo S</li>
+</ul>
+<br>
   <p id="precio">Precio:	US$ 115.70 + US$ 70.66 de envío</p>
   <br>
   <div class="botones">

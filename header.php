@@ -1,8 +1,12 @@
 <header>
+  <div class="container-fluid">
+
   <div class="row" id="buscador">
     <div class="nombre text-white col-sm-12 col-md-5 col-lg-5 ">
+
+      <a href="index.php">
       <img id="logodepagina" src="Logo-Mapache.png" alt="logo">
-      <h1 id= "titulodepagina">Mapache</h1>
+      <h1 id= "titulodepagina">Mapache</h1></a>
     </div>
     <div class="buscar col-sm-12 col-md-5 col-lg-5">
       <form class="form-inline d-flex justify-content-center" >
@@ -45,4 +49,6 @@
       </li>
     </ul>
     </div>
+
+  </div>
 </header>
