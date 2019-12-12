@@ -1,0 +1,23 @@
+body{
+  font-family: 'Righteous', cursive;
+}
+
+.todo{
+  margin: 10vh 0;
+}
+
+.titulo{
+  text-align: center;
+}
+
+.accordion{
+  width: 100%;
+}
+
+.accordion button{
+  color: #893BA0;
+}
+
+.accordion button:hover{
+  color: #672C78;
+}
