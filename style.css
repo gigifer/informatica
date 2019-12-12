@@ -128,14 +128,15 @@
 }
 #productos{
   align-content: center;
-  font-family: 'Righteous', cursive;
+  font-family: 'Relaway', cursive;
 
 }
 .producto{
   padding: 30px;
   background-color: #f1f7ee;
   border-radius: 3px solid white;
-  font-family: 'Gelasio';
+  font-family: 'Relaway';
+  font-size: 15px;
 }
 .producto h2{
   font-style:bold;
@@ -149,6 +150,7 @@
   float: right;
   color: white;
   border-radius: 20px;
+  font-family: 'Righteous';
 }
 /*formulario*/
 #inicio-uss .fondo{
@@ -158,7 +160,7 @@
   border: 1px solid white;
 }
 #inicio-uss button{
-  font-family: Righteous;
+  font-family: 'Righteous';
   background-color: #893ba0;
   float: right;
   color: white;

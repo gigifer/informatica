@@ -6,7 +6,7 @@
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
       <link rel="stylesheet" href="style.css">
       <link href="https://fonts.googleapis.com/css?family=Playfair+Display|Righteous&display=swap" rel="stylesheet">
-      <link href="https://fonts.googleapis.com/css?family=Gelasio&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Raleway:400,700&display=swap" rel="stylesheet">
       <title>Mapache</title>
       <script src="https://kit.fontawesome.com/acf02b5d89.js" crossorigin="anonymous"></script>
     </head>
@@ -57,7 +57,7 @@
           Procesador AMD Dual-Core serie
           Tamaño de pantalla: 14"
         </p>
-        <a  href="#"><button>VER MAS</button></a>
+        <a  href="vistaproducto.php"><button>VER MAS</button></a>
       </article>
 
     <article class="col-sm-12 col-md-6 col-lg-6 producto">
@@ -73,7 +73,7 @@
         • Conectividad: WIFI802.11 norma/b/g/n + BT
         • Sistema operativo: Windows 10 Home
       </p>
-      <a href="#"><button>VER MAS</button></a>
+      <a href="vistaproducto.php"><button>VER MAS</button></a>
     </article>
 
   <article class="col-sm-12 col-md-6 col-lg-6 producto">
@@ -82,7 +82,7 @@
     <p>
       Rendimiento: Pc de escritorio equipada con un potente Procesador Intel Core i5, 8GB de memoria RAM (expansible a 32GB) y almacenamiento SSD de 240GB, podrás ejecutar programas en simultáneo sin necesidad de esperas prolongadas y alternar su uso en tiempo real.
     </p>
-    <a href="#"><button>VER MAS</button></a>
+    <a href="vistaproducto.php"><button>VER MAS</button></a>
   </article>
 
   <article class="col-sm-12 col-md-6 col-lg-6 producto">
@@ -91,7 +91,7 @@
     <p>
     PC ideal para disfrutar de tus actividades diarias de ocio y de oficina. Cuenta con un poderoso micro procesador capaz de brindar un rendimiento óptimo en aplicaciones de todo tipo e inclusive disfrutar de algunos videojuegos. Ver películas, navegar por Internet, almacenar documentos, editar tus fotos, disfrutar de juegos, escuchar tu música y más nunca fue tan simple ¡EQUIPA TU HOGAR O TU OFICINA!
     </p>
-    <a href="#"><button>VER MAS</button></a>
+    <a href="vistaproducto.php"><button>VER MAS</button></a>
   </article>
   <article class="col-sm-12 col-md-6 col-lg-6 producto">
     <img src="img/teclado1.jpg" alt="">
@@ -99,7 +99,7 @@
     <p>
       Este teclado de 87 teclas brinda todo lo que un jugador profesional exige, sin necesidad del teclado numérico. Alloy FPS Pro cuenta con los interruptores mecánicos con cables con gran capacidad de respuesta CHERRY® MX, y su resistente estructura de acero sólido te asegura que tendrás una plataforma estable durante los momentos más importantes de tu juego.
     </p>
-    <a href="#"><button>VER MAS</button></a>
+    <a href="vistaproducto.php"><button>VER MAS</button></a>
   </article>
   <article class="col-sm-12 col-md-6 col-lg-6 producto">
     <img src="img/teclado2.jpg" alt="">
@@ -107,7 +107,7 @@
     <p>Este teclado alto rendimiento hará que disfrutes de horas ilimitadas de juego. Está diseñado especialmente para que puedas expresar tanto tus habilidades como tu estilo. Mejorá muchísimo tu experiencia de gaming, ya seas un aficionado o todo un experto, y hacé que tus jugadas alcancen otro nivel.
 
     </p>
-    <a href="#"><button>VER MAS</button></a>
+    <a href="vistaproducto.php"><button>VER MAS</button></a>
   </article>
 
 

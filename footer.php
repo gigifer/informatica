@@ -10,10 +10,10 @@
           0800-158-846
         </li>
         <li class="nav-item text-center col-sm-4 col-md-4 col-lg-4">
-          <a class="nav-link active text-white" href="#"><?php echo "$linksFooter[0]"?></a>
+          <a class="nav-link active text-white" href="faq.php"><?php echo "$linksFooter[0]"?></a>
         </li>
         <li class="nav-item text-center col-sm-4 col-md-4 col-lg-4">
-          <a class="nav-link active text-white" href="#"><?php echo "$linksFooter[1]"?></a>
+          <a class="nav-link active text-white" href="contacto.php"><?php echo "$linksFooter[1]"?></a>
         </li>
       </ul>
       <ul class="nav container-fluid" id="redes">
