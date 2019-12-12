@@ -1,9 +1,16 @@
 .container-fluid{
- padding-right: 0px;
- padding-left: 0px;
+  padding-right: 0px;
+  padding-left: 0px;
+  width: 100%;
 }
 
 /*HEADER*/
+
+.nombre a{
+  text-decoration: none;
+  color: #ffffff;
+}
+
 #titulodepagina{
   display: inline;
   font-family: 'Righteous', cursive;
@@ -28,6 +35,9 @@
   background-color: white;
   width: 30%;
   margin-left: 10px;
+}
+#botBuscar:hover{
+  color: #893ba0;
 }
 
 #inputBuscador{
@@ -84,7 +94,7 @@
 
 /* CARRUSEL */
 #carrusel{
-  width: 101%;
+  width: 100%;
 }
 
 /*footer*/
@@ -205,12 +215,16 @@
   text-align: center;
   font-weight: bolder;
   font-size: 25px;
+  font-family: 'Righteous', cursive;
+  font-weight: 400;
 }
 .precio-producto-vista #precio{
   text-align: center;
   font-weight: bolder;
   font-size: 20px;
   border-left: 2px solid rgba(#00ff21, 0.5);
+  font-family: 'Righteous', cursive;
+  font-weight: 400;
 }
 
 .precio-producto-vista .botones{
