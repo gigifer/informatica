@@ -1,4 +1,4 @@
-# informatica, 
+# Mapache informatica
 
 Trabajo practico integrador, Digital House, ARCO01
 
