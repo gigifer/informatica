@@ -128,14 +128,14 @@
 }
 #productos{
   align-content: center;
-  font-family: 'Relaway', cursive;
+  font-family: 'Raleway', cursive;
 
 }
 .producto{
   padding: 30px;
   background-color: #f1f7ee;
   border-radius: 3px solid white;
-  font-family: 'Relaway';
+  font-family: 'Raleway';
   font-size: 15px;
 }
 .producto h2{
@@ -151,23 +151,6 @@
   color: white;
   border-radius: 20px;
   font-family: 'Righteous';
-}
-/*formulario*/
-#inicio-uss .fondo{
-  font-family: 'Gelasio', serif;
-  background-color: #f1f7ee;
-  padding: 10px;
-  border: 1px solid white;
-}
-#inicio-uss button{
-  font-family: 'Righteous';
-  background-color: #893ba0;
-  float: right;
-  color: white;
-  border-radius: 20px;
-}
-#inicio-uss .form-check-input{
-  margin-left: -1.25rem;
 }
 
 /*perfil*/
@@ -232,4 +215,27 @@
 .precio-producto-vista .botones{
   text-align: center;
 
+}
+
+/*PERFIL*/
+
+.cuadro{
+  border: solid 2px gray;
+  border-radius: 5px;
+  padding: 20px;
+  margin-top: 35px;
+  margin-bottom: 35px;
+}
+.fotoUsuario{
+  float: left;
+  text-align: center;
+  padding-top: 15px;
+}
+.fotoUsuario i{
+  color: #893ba0;
+  font-size: 120px;
+}
+
+.formularioDatos{
+  float: left;
 }
