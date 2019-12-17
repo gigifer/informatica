@@ -151,30 +151,6 @@
   font-family: 'Righteous';
 }
 
-/*perfil*/
-#perfil .fondo{
-  font-family: 'Gelasio', serif;
-  background-color: #f1f7ee;
-  padding: 10px;
-  border: 1px solid white;
-
-}
-#perfil ul{
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
-#perfil ul li{
-  padding: 7px;
-}
-#perfil button{
-  font-family: Righteous;
-  background-color: #893ba0;
-  float: right;
-  color: white;
-  border-radius: 20px;
-}
-
 /* VISTA DE PRODUCTO */
 .foto-producto-vista img{
   width: 100%;
