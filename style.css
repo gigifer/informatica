@@ -1,4 +1,7 @@
 /*HEADER*/
+.container-fluid{
+  padding: 0px;
+}
 
 .nombre a{
   text-decoration: none;
@@ -118,32 +121,6 @@
 
 #redes :hover{
   color: #07BA3D;
-}
-
-/*productos*/
-*{
-  box-sizing: border-box;
-}
-#productos{
-  align-content: center;
-  font-family: 'Raleway', cursive;
-
-}
-.producto{
-  padding: 30px;
-  background-color: #f1f7ee;
-  border-radius: 3px solid white;
-  font-family: 'Raleway';
-  font-size: 15px;
-}
-
-.producto img{
-  width: 100%;
-}
-
-.botonvermas{
-    background-color: #893ba0;
-    color: white !important;
 }
 
 /* VISTA DE PRODUCTO */
