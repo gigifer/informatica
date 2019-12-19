@@ -1,5 +1,7 @@
 <header>
   <div class="container-fluid">
+    <div class="row" id="buscador">
+      <div class="nombre text-white col-sm-12 col-md-5 col-lg-5 ">
 
   <div class="row" id="buscador">
     <div class="nombre text-white col-sm-12 col-md-5 col-lg-5 ">
@@ -18,14 +20,26 @@
     <div class="col-sm-12 col-md-2 col-lg-2">
       <div class="carrito">
           <a href="carrito.php"><i class="fas fa-cart-arrow-down"></i></a>
+
       </div>
-      <div id="misCompras">
-        <a class="text-white" href="carrito.php">Mis compras</a>
+      <div class="buscar col-sm-12 col-md-5 col-lg-5">
+        <form class="form-inline d-flex justify-content-center" >
+          <input class="rounded-pill" type="search" aria-label="Search" id="inputBuscador">
+          <button id= "botBuscar" class="btn btn-outline-success rounded-pill" type="submit">Buscar</button>
+        </form>
+      </div>
+
+      <div class="col-sm-12 col-md-2 col-lg-2">
+        <div class="carrito">
+            <a href="carrito.php"><i class="fas fa-cart-arrow-down"></i></a>
+        </div>
+        <div id="misCompras">
+          <a class="text-white" href="carrito.php">Mis compras</a>
+        </div>
       </div>
     </div>
-  </div>
 
-    <div class="row">
+    <div class="row" id="navSinMargen">
       <ul class="nav container-fluid" id=barraNav>
         <li class="nav-item text-center text-white col-sm-12 col-md-3 col-lg-3">
         <a class="nav-link active text-white" href="index.php">Home</a>
