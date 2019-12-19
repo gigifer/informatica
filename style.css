@@ -138,19 +138,14 @@
   font-family: 'Raleway';
   font-size: 15px;
 }
-.producto h2{
-  font-style:bold;
-}
 
 .producto img{
   width: 100%;
 }
-.producto button{
-  background-color: #893ba0;
-  float: right;
-  color: white;
-  border-radius: 20px;
-  font-family: 'Righteous';
+
+.botonvermas{
+    background-color: #893ba0;
+    color: white !important;
 }
 
 /*perfil*/
