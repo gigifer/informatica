@@ -42,7 +42,7 @@
     <img src="img/notebook2.jpg" class="card-img-top" alt="Notebook2">
     <div class="card-body">
       <h5 class="card-title">Notebook CX</h5>
-      <p class="card-text">Pantalla: 11.6” - Formato 16:9, Procesador: Intel Atom x5 - Z8350 1.44 Ghz, Memoria RAM: 2GB DDR3L, Almacenamiento: 32GB, Gráficos: Gen8 - LP10 / 12E Up to 600MHz, Puertos: Mini HDMI Type C 1.4 / x 1 USB 3.0 / x1 USB 2.0 Soporta SDHC / SDXC, Conectividad: WIFI802.11 norma/b/g/n + BT, Sistema operativo: Windows 10 Home.</p>
+      <p class="card-text">Pantalla: 11.6” - Formato 16:9, Procesador: Intel Atom x5 - Z8350 1.44 Ghz, Memoria RAM: 2GB DDR3L, Almacenamiento: 32GB, Sistema operativo: Windows 10 Home.</p>
       <a href="vistaproducto.php"><button type="button" class="btn btn-success">VER MÁS</button></a>
   </div>
   </div>
@@ -62,7 +62,7 @@
     <img src="img/pc1.jpg" class="card-img-top" alt="pc1">
     <div class="card-body">
       <h5 class="card-title">PC Completa Hogar</h5>
-      <p class="card-text">Rendimiento: Pc de escritorio equipada con un potente Procesador Intel Core i5, 8GB de memoria RAM (expansible a 32GB) y almacenamiento SSD de 240GB, podrás ejecutar programas en simultáneo sin necesidad de esperas prolongadas y alternar su uso en tiempo real.</p>
+      <p class="card-text">Rendimiento: Pc de escritorio equipada con un potente Procesador Intel Core i5, 8GB de memoria RAM (expansible a 32GB) y almacenamiento SSD de 240GB.</p>
       <a href="vistaproducto.php"><button type="button" class="btn btn-success">VER MÁS</button></a>
     </div>
   </div>
@@ -70,7 +70,7 @@
     <img src="img/pc2.jpg" class="card-img-top" alt="pc2">
     <div class="card-body">
       <h5 class="card-title">PC Completa Oficina</h5>
-      <p class="card-text">PC ideal para disfrutar de tus actividades diarias de ocio y de oficina. Cuenta con un poderoso micro procesador capaz de brindar un rendimiento óptimo en aplicaciones de todo tipo e inclusive disfrutar de algunos videojuegos. Ver películas, navegar por Internet, almacenar documentos, editar tus fotos, disfrutar de juegos, escuchar tu música y más nunca fue tan simple ¡EQUIPA TU HOGAR O TU OFICINA!</p>
+      <p class="card-text">PC ideal para disfrutar de tus actividades diarias de ocio y de oficina. Cuenta con un poderoso micro procesador capaz de brindar un rendimiento óptimo en aplicaciones de todo tipo e inclusive disfrutar de algunos videojuegos.</p>
       <a href="vistaproducto.php"><button type="button" class="btn btn-success">VER MÁS</button></a>
     </div>
   </div>
@@ -90,7 +90,7 @@
     <img src="img/teclado1.jpg" class="card-img-top" alt="teclado1">
     <div class="card-body">
       <h5 class="card-title">Teclado Logitech</h5>
-      <p class="card-text">Este teclado de 87 teclas brinda todo lo que un jugador profesional exige, sin necesidad del teclado numérico. Alloy FPS Pro cuenta con los interruptores mecánicos con cables con gran capacidad de respuesta CHERRY® MX, y su resistente estructura de acero sólido te asegura que tendrás una plataforma estable durante los momentos más importantes de tu juego.</p>
+      <p class="card-text">Este teclado de 87 teclas brinda todo lo que un jugador profesional exige, sin necesidad del teclado numérico. Alloy FPS Pro cuenta con los interruptores mecánicos con cables con gran capacidad de respuesta CHERRY® MX.</p>
       <a href="vistaproducto.php"><button type="button" class="btn btn-success">VER MÁS</button></a>
         </div>
   </div>
@@ -98,7 +98,7 @@
     <img src="img/teclado2.jpg" class="card-img-top" alt="teclado2">
     <div class="card-body">
       <h5 class="card-title">Teclado Razer</h5>
-      <p class="card-text">Este teclado alto rendimiento hará que disfrutes de horas ilimitadas de juego. Está diseñado especialmente para que puedas expresar tanto tus habilidades como tu estilo. Mejorá muchísimo tu experiencia de gaming, ya seas un aficionado o todo un experto, y hacé que tus jugadas alcancen otro nivel.</p>
+      <p class="card-text">Este teclado alto rendimiento hará que disfrutes de horas ilimitadas de juego. Está diseñado especialmente para que puedas expresar tanto tus habilidades como tu estilo.</p>
       <a href="vistaproducto.php"><button type="button" class="btn btn-success">VER MÁS</button></a>
   </div>
   </div>
