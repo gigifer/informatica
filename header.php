@@ -25,7 +25,7 @@
     </div>
   </div>
 
-    <div class="row">
+    <div id="barraverde">
       <ul class="nav container-fluid" id=barraNav>
         <li class="nav-item text-center text-white col-sm-12 col-md-3 col-lg-3">
         <a class="nav-link active text-white" href="index.php">Home</a>
