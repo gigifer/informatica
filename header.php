@@ -13,7 +13,7 @@
           <button id= "botBuscar" class="btn btn-outline-success rounded-pill" type="submit">Buscar</button>
         </form>
       </div>
-
+      
       <div class="col-sm-12 col-md-2 col-lg-2">
         <div class="carrito">
             <a href="carrito.php"><i class="fas fa-cart-arrow-down"></i></a>
