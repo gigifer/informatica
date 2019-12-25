@@ -3,7 +3,11 @@ body{
 }
 
 .todo{
-  margin: 10vh 0 22vh 0;
+  margin: 10vh 0 10vh 0;
+}
+
+.todo h2{
+  text-align: center;
 }
 
 .cuadro{
@@ -30,6 +34,23 @@ body{
   color: white;
 }
 
+.boton button{
+  width: 100%;
+}
+
 .imagenPerfil{
-  margin-top: 3vh;
+  margin-top: 5vh;
+}
+
+.imagenPerfil label{
+  color: #893BA0;
+}
+
+.cuenta{
+  margin: 3vh auto;
+  text-align: center;
+}
+
+.centrar{
+  margin: 0 auto;
 }

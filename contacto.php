@@ -1,6 +1,31 @@
 <?php
-$provincias = ["Buenos Aires","Catamarca", "Chaco", "Chubut", "Córdoba", "Corrientes", "Entre Rios", "Formosa", "Jujuy", "La Pampa", "La Rioja", "Mendoza", "Misiones", "Neuquen", "Rio Negro", "Salta", 
-"San Juan", "San Luis", "Santa Cruz", "Santa Fe", "Stgo del Estero", "Tierra del Fuego", "Tucuman"];
+$provincias = [
+  "BA"=>"Buenos Aires",
+  "CAT"=>"Catamarca",
+  "CHA"=>"Chaco",
+  "CHU"=>"Chubut",
+  "CBA"=>"Córdoba",
+  "COR"=>"Corrientes",
+  "ER"=>"Entre Rios",
+  "FOR"=>"Formosa",
+  "JU"=>"Jujuy",
+  "LP"=>"La Pampa",
+  "LR"=>"La Rioja",
+  "MEN"=>"Mendoza",
+  "MI"=>"Misiones",
+  "NE"=>"Neuquen",
+  "RN"=>"Rio Negro",
+  "SAL"=>"Salta",
+  "SJ"=>"San Juan",
+  "SL"=>"San Luis",
+  "SC"=>"Santa Cruz",
+  "SF"=>"Santa Fe",
+  "SE"=>"Stgo del Estero",
+  "TF"=>"Tierra del Fuego",
+  "TU"=>"Tucuman"
+];
+
+
  ?>
 
 
@@ -30,39 +55,33 @@ $provincias = ["Buenos Aires","Catamarca", "Chaco", "Chubut", "Córdoba", "Corri
               <form>
                 <div class="form-row">
                   <div class="form-group col-md-6">
-                    <label for="inputEmail4">Email</label>
-                    <input type="email" class="form-control" id="inputEmail4">
+                    <input type="email" class="form-control" id="inputEmail4" placeholder="E-mail">
                   </div>
                   <div class="form-group col-md-6">
-                    <label for="inputPassword4">Apellido y Nombre</label>
-                    <input type="password" class="form-control" id="inputPassword4">
+                    <input type="text" class="form-control" id="inputPassword4" placeholder="Apellido y Nombre">
                   </div>
                 </div>
                 <div class="form-group">
-                  <label for="inputAddress">Dirección</label>
-                  <input type="text" class="form-control" id="inputAddress" placeholder="">
+                  <input type="text" class="form-control" id="inputAddress" placeholder="Dirección">
                 </div>
                 <div class="form-group">
-                  <label for="inputAddress2">Teléfono</label>
-                  <input type="text" class="form-control" id="inputAddress2" placeholder="">
+                  <input type="number" class="form-control" id="inputAddress2" placeholder="Teléfono">
                 </div>
                 <div class="form-row">
                   <div class="form-group col-md-6">
-                    <label for="inputCity">Ciudad</label>
-                    <input type="text" class="form-control" id="inputCity">
+                    <input type="text" class="form-control" id="inputCity" placeholder="Ciudad">
                   </div>
                   <div class="form-group col-md-6">
-                    <label for="inputState">Provincia</label>
-                    <select id="inputState" class="form-control" placeholder="Seleccione una opción">
-                      <?php for ($i=0; $i < count($provincias); $i++) :?>
-                      <option><?= $provincias[$i]; ?></option>
-                      <?php endfor;?>
+                    <select id="inputState" class="form-control" placeholder="Seleccione una provincia">
+                      <option disabled selected>Seleccione una provincia</option>
+                      <?php foreach ($provincias as $valor => $provincia) :?>
+                      <option value="<?=$valor;?>"><?= $provincia; ?></option>
+                    <?php endforeach;?>
                     </select>
                   </div>
                 </div>
                 <div class="form-group">
-                  <label for="exampleFormControlTextarea1">Tu mensaje</label>
-                  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Tu mensaje"></textarea>
                 </div>
                 <div class="form-group">
                   <div class="form-check">
