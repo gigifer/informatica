@@ -39,8 +39,7 @@
             <img class="logoPago2" src="img/mastercard.svg">
             <img class="logoPago2" src="img/naranja.svg">
             <img class="logoPago2" src="img/visadebito.svg"></p>
-
-      </li>
+    </li>
       </ul>
 
 
