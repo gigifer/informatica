@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css?family=Righteous&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/l.css">
     <link rel="stylesheet" href="style.css">
-    
+
     <title>Login - Mapache</title>
   </head>
   <body>
@@ -36,7 +36,7 @@
             <input type="checkbox" name="" value="">Recordarme <br>
             <button type="submit" class="btn">Ingresar</button>
           </div>
-          
+
         </div>
       </div>
     </div>
