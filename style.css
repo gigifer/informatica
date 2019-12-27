@@ -183,3 +183,8 @@
 .formularioDatos{
   float: left;
 }
+
+.colorVioleta{
+  background-color: #893ba0;
+  color: white;
+}
