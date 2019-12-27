@@ -1,17 +1,17 @@
 <?php
 session_start();
 $errores = [];
-$usuario = "";
+
   function verificarLogin(){
     if($_POST){
       global $errores;
-      global $usuario;
       $usuariosRegistrados = file_get_contents("usuarios.json");
       $arrayUsuarios = json_decode($usuariosRegistrados, true);
       if(!empty($_POST["usuario"]) && !empty($_POST["contraseña"])){
         //recorro el array
         foreach ($arrayUsuarios as $user) {
           if ($_POST["usuario"] == $user["usuario"]) {
+            $_SESSION["usuario"] = $_POST["usuario"];
             if(password_verify($_POST["contraseña"], $user["contrasenia"])){
               $_SESSION["usuario"] = $user["usuario"];
               if(isset($_POST["recordarme"])){
@@ -75,9 +75,10 @@ $usuario = "";
             <div class="centrar col-lg-6">
               <div class="cuadro">
                 <form class="" action="login.php" method="POST">
+                  <?php verificarLogin(); ?>
                   <div class="row">
                     <div class="col-12">
-                      <input type="text" name="usuario" value="<?=$usuario?>" class="form-control" placeholder="Usuario">
+                      <input type="text" name="usuario" value="<?=(isset($_SESSION["usuario"])) ? $_SESSION["usuario"] : ""; ?>" class="form-control" placeholder="Usuario">
                     </div>
                     <div class="col-12">
                       <input type="password" name="contraseña" value="" class="form-control" placeholder="Contraseña">
@@ -85,13 +86,12 @@ $usuario = "";
                   </div>
               </div>
             <?php
-            verificarLogin();
             mostrarErrores();
             ?>
 
             <div class="boton">
-              <input type="checkbox" name="recordarme" value="">Recordarme
-              <button type="submit" class="btn">Ingresar</button>
+                <input type="checkbox" name="recordarme" value="">Recordarme
+                <button type="submit" class="btn">Ingresar</button>
             </div>
               </form>
 
