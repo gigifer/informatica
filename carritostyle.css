@@ -1,0 +1,33 @@
+.contenedorCarro{
+  overflow: hidden;
+}
+
+.cajasCarro{
+  float: left;
+}
+
+.fuenteCarro{
+  font-family: 'Righteous', cursive;
+}
+
+#productoCarro{
+  width: 200px;
+}
+
+#pagar{
+  background-color: #893ba0;
+  color: white;
+  border-radius: 20px;
+}
+
+.cuadro{
+  border: solid 2px gray;
+  border-radius: 5px;
+  padding: 20px;
+  margin-top: 35px;
+  margin-bottom: 35px;
+}
+
+.cajaTotal{
+  border-left: solid 2px gray;
+}
