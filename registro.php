@@ -15,7 +15,7 @@ $placeholder = ["Nombre","Contraseña","E-mail","Repita la Contraseña"];
     <link rel="stylesheet" href="css/r.css">
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/acf02b5d89.js" crossorigin="anonymous"></script>
-    <title>Hello, world!</title>
+    <title>Registrate!</title>
   </head>
   <body>
     <?php include 'header.php' ?>

@@ -1,4 +1,9 @@
 /*HEADER*/
+.sinMargen{
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
 .nombre a{
   text-decoration: none;
   color: #ffffff;
@@ -104,10 +109,11 @@
   background-color: #50514F;
   margin-right: 0px;
   margin-left: 0px;
+  font-family: 'Righteous', cursive;
 }
 
 #linksAyuda{
-  font-family: 'Righteous', cursive;
+
   padding-top: 15px;
   font-size: 1em;
 }
@@ -120,7 +126,10 @@
 #redes :hover{
   color: #07BA3D;
 }
+#pagos{
+  font-size: 1em;
 
+}
 /* VISTA DE PRODUCTO */
 .foto-producto-vista img{
   width: 100%;
