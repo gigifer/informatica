@@ -1,3 +1,53 @@
+<?php
+session_start();
+$errores = [];
+
+  function verificarLogin(){
+    if($_POST){
+      global $errores;
+      $usuariosRegistrados = file_get_contents("usuarios.json");
+      $arrayUsuarios = json_decode($usuariosRegistrados, true);
+      if(!empty($_POST["usuario"]) && !empty($_POST["contraseña"])){
+        //recorro el array
+        foreach ($arrayUsuarios as $user) {
+          if ($_POST["usuario"] == $user["usuario"]) {
+            $_SESSION["usuario"] = $_POST["usuario"];
+            if(password_verify($_POST["contraseña"], $user["contrasenia"])){
+              $_SESSION["usuario"] = $user["usuario"];
+              if(isset($_POST["recordarme"])){
+                setcookie("nombreUsuario", $user["contrasenia"], time() + 60 * 60 * 24 * 7);
+              }
+              header("location: index.php");
+              exit;
+            }
+          }
+          else{
+          $errores = ["usuario o contraseña incorrectos"];
+          }
+        }
+      }
+      else{
+        $errores[] = "El nombre de usuario y la contraseña son campos obligatorios";
+      }
+    }
+  }
+
+
+  function mostrarErrores(){
+    global $errores;
+
+    //imprimo errores en un alerta o en un succes
+    if($errores>0){
+
+      for ($i=0; $i < count($errores); $i++) {
+        echo '<br>';
+        echo '<div class="alert alert-danger" role="alert">' . $errores[$i] . '</div>';
+      }
+    }
+  }
+
+ ?>
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -20,23 +70,37 @@
       <div class="container">
         <div class="todo">
 
-          <h2>Ingresá con tu usuario y contraseña</h2><br>
-          <div class="cuadro">
-            <div class="row">
-              <div class="col-xs-12 col-md-6">
-                <input type="text" name="" value="" placeholder="Usuario">
+
+            <h2>Ingresá con tu usuario y contraseña</h2><br>
+            <div class="centrar col-lg-6">
+              <div class="cuadro">
+                <form class="" action="login.php" method="POST">
+                  <?php verificarLogin(); ?>
+                  <div class="row">
+                    <div class="col-12">
+                      <input type="text" name="usuario" value="<?=(isset($_SESSION["usuario"])) ? $_SESSION["usuario"] : ""; ?>" class="form-control" placeholder="Usuario">
+                    </div>
+                    <div class="col-12">
+                      <input type="password" name="contraseña" value="" class="form-control" placeholder="Contraseña">
+                    </div>
+                  </div>
               </div>
-              <div class="col-xs-12 col-md-6">
-                <input type="text" name="" value="" placeholder="Contraseña">
-              </div>
+            <?php
+            mostrarErrores();
+            ?>
+
+            <div class="boton">
+                <input type="checkbox" name="recordarme" value="">Recordarme
+                <button type="submit" class="btn">Ingresar</button>
             </div>
-          </div>
+              </form>
 
-          <div class="boton">
-            <input type="checkbox" name="" value="">Recordarme <br>
-            <button type="submit" class="btn">Ingresar</button>
-          </div>
+            <div class="cuenta col-xs-5 col-lg-6">
+            <a href="#"><p>Olvidé mi contraseña</p></a>
+            <a href="http://localhost/leo/registro.php"><p>No tengo cuenta</p></a>
+            </div>
 
+          </div>
         </div>
       </div>
     </div>
