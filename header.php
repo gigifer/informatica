@@ -1,5 +1,5 @@
 <header>
-  <div class="container-fluid">
+  <div class="container-fluid sinMargen">
     <div class="row" id="buscador">
       <div class="nombre text-white col-sm-12 col-md-5 col-lg-5 ">
         <a href="index.php">
@@ -13,7 +13,7 @@
           <button id= "botBuscar" class="btn btn-outline-success rounded-pill" type="submit">Buscar</button>
         </form>
       </div>
-      
+
       <div class="col-sm-12 col-md-2 col-lg-2">
         <div class="carrito">
             <a href="carrito.php"><i class="fas fa-cart-arrow-down"></i></a>
