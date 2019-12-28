@@ -1,9 +1,14 @@
-.container-fluid{
- padding-right: 0px;
- padding-left: 0px;
+/*HEADER*/
+.sinMargen{
+  padding-left: 0px;
+  padding-right: 0px;
 }
 
-/*HEADER*/
+.nombre a{
+  text-decoration: none;
+  color: #ffffff;
+}
+
 #titulodepagina{
   display: inline;
   font-family: 'Righteous', cursive;
@@ -20,14 +25,17 @@
 #buscador{
   background-color: #50514F;
   overflow: hidden;
-  padding-left: 15px;
-  padding-right: 15px;
+  margin-right: 0px;
+  margin-left: 0px;
 }
 
 #botBuscar{
   background-color: white;
   width: 30%;
   margin-left: 10px;
+}
+#botBuscar:hover{
+  color: #893ba0;
 }
 
 #inputBuscador{
@@ -45,7 +53,7 @@
   padding-left: 0px;
 }
 
-.form-inline{
+.buscar .form-inline{
   padding-top: 35px;
 }
 
@@ -82,19 +90,30 @@
   padding-bottom: 10px
 }
 
+.largoBarra{
+  width: 100%;
+}
+
+.navbar-toggler{
+  background-color: white;
+}
+
 /* CARRUSEL */
 #carrusel{
-  width: 101%;
+  width: 100%;
 }
 
 /*footer*/
 
 .pieDePagina{
   background-color: #50514F;
+  margin-right: 0px;
+  margin-left: 0px;
+  font-family: 'Righteous', cursive;
 }
 
 #linksAyuda{
-  font-family: 'Righteous', cursive;
+
   padding-top: 15px;
   font-size: 1em;
 }
@@ -107,7 +126,10 @@
 #redes :hover{
   color: #07BA3D;
 }
+#pagos{
+  font-size: 1em;
 
+}
 /* VISTA DE PRODUCTO */
 .foto-producto-vista img{
   width: 100%;
@@ -131,14 +153,47 @@
   text-align: center;
   font-weight: bolder;
   font-size: 25px;
+  font-family: 'Righteous', cursive;
+  font-weight: 400;
 }
 .precio-producto-vista #precio{
   text-align: center;
   font-weight: bolder;
   font-size: 20px;
   border-left: 2px solid rgba(#00ff21, 0.5);
+  font-family: 'Righteous', cursive;
+  font-weight: 400;
 }
 
 .precio-producto-vista .botones{
   text-align: center;
+
+}
+
+/*PERFIL*/
+
+.cuadro{
+  border: solid 2px gray;
+  border-radius: 5px;
+  padding: 20px;
+  margin-top: 35px;
+  margin-bottom: 35px;
+}
+.fotoUsuario{
+  float: left;
+  text-align: center;
+  padding-top: 15px;
+}
+.fotoUsuario i{
+  color: #893ba0;
+  font-size: 120px;
+}
+
+.formularioDatos{
+  float: left;
+}
+
+.colorVioleta{
+  background-color: #893ba0;
+  color: white;
 }
