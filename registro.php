@@ -22,6 +22,7 @@ $contraseña = "";
         foreach ($usuarios as $user) {
           if ($_POST["usuario"] == $user["usuario"]) {
             $errores[] = "El nombre de usuario ya existe";
+            $usuario = "";
             break;
           }
           else{
@@ -43,6 +44,7 @@ $contraseña = "";
         foreach ($usuarios as $user) {
           if ($_POST["email"] == $user["email"]) {
             $errores[] = "El email ya se encuentra registrado";
+            $usuario = "";
             break;
           }
           else{
