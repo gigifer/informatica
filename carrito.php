@@ -1,3 +1,8 @@
+<?php
+session_start();
+if(isset($_SESSION["usuario"])){
+?>
+
 <!DOCTYPE html>
   <html lang="en">
     <head>
@@ -81,12 +86,18 @@
             </div>
             <br>
             <div class="text-center">
-              <button id="pagar" type="button" name="button">Pagar</button>
-              <button id="pagar" type="button" name="button">Agregar Producto</button>
+              <button type="button" class="btn colorVioleta" name="button">Pagar</button>
+              <button type="button" class="btn colorVioleta" name="button">Agregar Producto</button>
           </div>
           </div>
         </div>
       </div>
+      <?php
+      }
+      else {
+      header("Location: logout.php");
+      }
+      ?>
       <?php include ("footer.php") ?>
 
     </body>

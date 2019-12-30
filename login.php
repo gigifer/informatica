@@ -97,7 +97,7 @@ $errores = [];
 
             <div class="cuenta col-xs-5 col-lg-6">
             <a href="#"><p>Olvidé mi contraseña</p></a>
-            <a href="http://localhost/leo/registro.php"><p>No tengo cuenta</p></a>
+            <a href="registro.php"><p>No tengo cuenta</p></a>
             </div>
 
           </div>

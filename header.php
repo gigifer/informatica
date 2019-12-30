@@ -29,6 +29,35 @@
         <span class="navbar-toggler-icon"></span>
       </button>
 
+      <?php
+      if(isset($_SESSION["usuario"])){
+      ?>
+      <div class="collapse navbar-collapse row" id="opciones">
+        <ul class="navbar-nav largoBarra" id=barraNav>
+          <li class="nav-item col-sm-12 col-md-3 col-lg-3">
+            <a class="nav-link text-center text-white" href="index.php">Home</a>
+          </li>
+          <li class="nav-item dropdown col-sm-12 col-md-3 col-lg-3">
+            <a class="nav-link dropdown-toggle text-center text-white" href="index.php" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Productos
+            </a>
+            <div class="dropdown-menu " aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item " href="index.php#categorianotebooks">Notebooks</a>
+              <a class="dropdown-item" href="index.php#categoriapcdeescritorio">PC de Escritorio</a>
+              <a class="dropdown-item" href="index.php#categoriateclados">Teclados</a>
+            </div>
+          </li>
+          <li class="nav-item col-sm-12 col-md-3 col-lg-3">
+            <a class="nav-link text-center text-white" href="perfilUsuario.php"><i class="far fa-address-card pr-3"></i><?php echo $_SESSION["usuario"] ?></a>
+          </li>
+          <li class="nav-item col-sm-12 col-md-3 col-lg-3">
+            <a class="nav-link text-center text-white" href="logout.php">Salir</a>
+          </li>
+        </ul>
+      </div>
+      <?php
+      }else {
+      ?>
       <div class="collapse navbar-collapse row" id="opciones">
         <ul class="navbar-nav largoBarra" id=barraNav>
           <li class="nav-item col-sm-12 col-md-3 col-lg-3">
@@ -52,6 +81,9 @@
           </li>
         </ul>
       </div>
+      <?php
+      }
+      ?>
     </nav>
   </div>
 
