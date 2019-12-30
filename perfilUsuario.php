@@ -39,7 +39,7 @@ session_start();
       <div class="datosUsuario row">
         <div class="col-ms-12 col-md-4 col-lg-4 fotoUsuario">
           <i class="fas fa-portrait"></i><br><br>
-        <div class="boton">  <button type="submit" class="btn">Editar Perfil</button>        </div>
+        <div class="boton"><a href="editarUsuario.php"><button type="submit" class="btn">Editar Perfil</button></a>          </div>
         </div>
         <div class="col-ms-12 col-md-8 col-lg-8 formularioDatos">
           <form>

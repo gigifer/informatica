@@ -9,6 +9,8 @@ body{
   border: solid 2px gray;
   padding: 20px;
   border-radius: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 .btn-primary{
   background-color: #893BA0;

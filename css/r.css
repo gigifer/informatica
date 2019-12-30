@@ -11,7 +11,8 @@ body{
 }
 
 .cuadro{
-  margin: 0 auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
   border: solid 2px gray;
   border-radius: 5px;
   padding: 20px;
