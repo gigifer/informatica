@@ -207,7 +207,7 @@ $contraseña = "";
             </div>
 
             <div class="cuenta col-xs-5 col-lg-6">
-            <a href="http://localhost/leo/login.php"><p>Ya tengo cuenta</p></a>
+            <a href="login.php"><p>Ya tengo cuenta</p></a>
             </div>
           </div>
         </div>
