@@ -1,5 +1,145 @@
 <?php
-$placeholder = ["Nombre","Contraseña","E-mail","Repita la Contraseña"];
+session_start();
+$errores = array();
+$usuario = "";
+$email = "";
+$contraseña = "";
+
+  function validarUsuario(){
+    $patronUsuario = "/^[a-z0-9_-]{8,16}$/";
+    global $errores;
+    if($_POST){
+      //validar usuario con expresion regular
+      if(!preg_match($patronUsuario, $_POST["usuario"])){
+        $errores[] = "El nombre de usuario debe tener entre 8 y 16 carácteres, puede contener minúsculas, números, un guión bajo y/o guión medio";
+        $usuario = "";
+      }
+      //validar que no exista el nombre de usuario y persistir el dato por si se quiere cambiar algo
+      else{
+        global $usuario;
+        $arrayUsuarios = file_get_contents("usuarios.json");
+        $usuarios = json_decode($arrayUsuarios, true);
+        foreach ($usuarios as $user) {
+          if ($_POST["usuario"] == $user["usuario"]) {
+            $errores[] = "El nombre de usuario ya existe";
+            $usuario = "";
+            break;
+          }
+          else{
+            $usuario = $_POST["usuario"];
+          }
+        }
+      }
+    }
+  }
+
+  function validarEmail(){
+    if($_POST){
+      global $email;
+      global $errores;
+      //validar el formato de email, que no exista el email y persistir el dato por si se quiere cambiar algo
+      if(filter_var($_POST["email"], FILTER_VALIDATE_EMAIL) == true){
+        $arrayUsuarios = file_get_contents("usuarios.json");
+        $usuarios = json_decode($arrayUsuarios, true);
+        foreach ($usuarios as $user) {
+          if ($_POST["email"] == $user["email"]) {
+            $errores[] = "El email ya se encuentra registrado";
+            $usuario = "";
+            break;
+          }
+          else{
+            $email = $_POST["email"];
+          }
+        }
+      }
+      else{
+        $errores[] = "El email no tiene el formato correcto";
+        $email = "";
+      }
+    }
+  }
+
+  function validarContraseña(){
+    $patronContraseña = "/^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$/";
+    if($_POST){
+      //validar contraseña con expresion regular
+      if(!preg_match($patronContraseña, $_POST["contraseña"])){
+        global $errores;
+        $errores[] = "La contraseña debe tener entre 8 y 16 caracteres, al menos un número, al menos una minúscula y al menos una mayúscula.
+                      NO puede tener otros símbolos.";
+        $contraseña = "";
+      }
+
+      //validar que las contraseñas sean iguales
+      elseif($_POST["contraseña"] != $_POST["repetirContraseña"]){
+        global $errores;
+        $errores[] = "Las contraseñas no coinciden";
+      }
+    }
+  }
+
+  function mostrarErrores(){
+    global $errores;
+    echo '<br>';
+    //imprimo errores en un alerta o en un succes
+    if($errores>0){
+      for ($i=0; $i < count($errores); $i++) {
+        echo '<div class="alert alert-danger" role="alert">' . $errores[$i] . '</div>';
+      }
+    }
+  }
+
+  function validarArchivos(){
+    if($_FILES){
+      global $errores;
+      //no tienen que haber errores registrados
+      if (empty($errores)) {
+        if (!empty($_FILES["imagen"]["name"])) {
+          if ($_FILES["imagen"]["error"] != 0) {
+            $errores[] = "La imagen de perfil no se ha subido correctamente";
+          }
+          else{
+            $extension = pathinfo($_FILES["imagen"]["name"], PATHINFO_EXTENSION);
+            if ($extension != "jpg" && $extension != "jpeg" && $extension != "png") {
+              $errores[] = "La imagen debe ser de tipo jpg, jpeg o png";
+            }
+            else{
+              move_uploaded_file($_FILES["imagen"]["tmp_name"], "files/imagen." . $extension);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  function registrarUsuario(){
+    if($_POST){
+      global $errores;
+      $arrayUsuario = [];
+      $usuariosArray = [];
+        //no tiene que haber errores (incluso al subir la foto de perfil)
+        if(empty($errores)){
+          $arrayUsuario["usuario"] = $_POST["usuario"];
+          $arrayUsuario["email"] = $_POST["email"];
+          //si pongo "contraseña" como clave en el json recibe caracteres extraños
+          $arrayUsuario["contrasenia"] = password_hash($_POST["contraseña"], PASSWORD_DEFAULT);
+          $usuarios = file_get_contents("usuarios.json");
+          $usuariosArray = json_decode($usuarios, true);
+          //si no valido el array_push me da un warning no reconociendo el usuariosArray vacio como un array
+          if($usuariosArray==null){
+            $usuariosArray[] = $arrayUsuario;
+          }
+          else{
+          array_push($usuariosArray, $arrayUsuario);
+          }
+          $usuariosFinal = json_encode($usuariosArray);
+          file_put_contents("usuarios.json", $usuariosFinal . PHP_EOL);
+          header("location: login.php");
+          exit;
+        }
+    }
+  }
+
  ?>
 
 <!doctype html>
@@ -15,33 +155,65 @@ $placeholder = ["Nombre","Contraseña","E-mail","Repita la Contraseña"];
     <link rel="stylesheet" href="css/r.css">
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/acf02b5d89.js" crossorigin="anonymous"></script>
-    <title>Registrate!</title>
+    <title>Registro - Mapache</title>
   </head>
   <body>
+    <!--header-->
     <?php include 'header.php' ?>
+    <!--formulario de registro-->
     <div class="container-fluid">
       <div class="container">
         <div class="todo">
         <h2>Completá tus datos</h2><br>
-        <div class="cuadro">
-        <div class="row">
-
-            <?php for ($i=0; $i < count($placeholder); $i++) :?>
-              <div class="col-xs-12 col-md-6">
-                <input type="text" name="" value="" placeholder="<?= $placeholder[$i] ?>">
+        <div class="centrar col-lg-6">
+          <div class="cuadro">
+            <?php
+            validarUsuario();
+            validarEmail();
+            validarContraseña();
+            validarArchivos();
+            registrarUsuario();
+            ?>
+            <form class="" action="registro.php" method="POST" enctype="multipart/form-data">
+              <div class="row">
+                  <div class="col-12  ">
+                    <input type="text" class="form-control" name="usuario" value="<?=$usuario;?>" placeholder="Usuario">
+                  </div>
+                  <div class="col-12  ">
+                    <input type="email" class="form-control" name="email" value="<?=$email;?>" placeholder="E-mail">
+                  </div>
+                  <div class="col-12  ">
+                    <input type="password" class="form-control" name="contraseña" value="<?=$contraseña?>" placeholder="Contraseña">
+                  </div>
+                  <div class="col-12  ">
+                    <input type="password" class="form-control" name="repetirContraseña" value="<?=$contraseña?>" placeholder="Confirmar contraseña">
+                  </div>
+                  <div class=" col-12 ">
+                    <div class="imagenPerfil">
+                      <label for="fotoPerfil">Adjuntá tu foto de perfil</label>
+                      <input type="file" id="fotoPerfil" name="imagen">
+                    </div>
+                  </div>
               </div>
-            <?php endfor; ?>
+            </div>
+
+
+            <?php
+            mostrarErrores();
+            ?>
+            <div class="boton">
+              <button type="submit" class="btn">Crear Cuenta</button>
+              </form>
+            </div>
+
+            <div class="cuenta col-xs-5 col-lg-6">
+            <a href="login.php"><p>Ya tengo cuenta</p></a>
+            </div>
           </div>
-        </div>
-
-        <div class="boton">
-          <input type="checkbox" name="" value="">Deseo recibir información <br>
-          <button type="submit" class="btn">Crear Cuenta</button>
-
-        </div>
         </div>
       </div>
     </div>
+    <!--footer-->
     <?php include 'footer.php' ?>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

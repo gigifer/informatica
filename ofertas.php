@@ -1,5 +1,5 @@
 <!-- CARRUSEL DE OFERTAS -->
-<div id="carrusel" class="carousel slide container-fluid" data-ride="carousel">
+<div id="carrusel" class="carousel slide container-fluid sinMargen" data-ride="carousel">
   <ol class="carousel-indicators">
     <li data-target="#carrusel" data-slide-to="0" class="active"></li>
     <li data-target="#carrusel" data-slide-to="1"></li>

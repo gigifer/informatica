@@ -1,4 +1,9 @@
 /*HEADER*/
+.sinMargen{
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
 .nombre a{
   text-decoration: none;
   color: #ffffff;
@@ -178,4 +183,9 @@
 }
 .formularioDatos{
   float: left;
+}
+
+.colorVioleta{
+  background-color: #893ba0;
+  color: white;
 }

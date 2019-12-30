@@ -1,3 +1,8 @@
+<?php
+session_start();
+
+?>
+
 <!DOCTYPE html>
   <html lang="en">
     <head>
@@ -25,7 +30,9 @@
 <div class="container">
 
 <!-- NOTEBOOKS -->
-<div id="categorianotebooks" class="card-deck">
+<h2 id="categorianotebooks">Notebooks</h2>
+<br>
+<div class="card-deck">
   <div class="card">
     <img src="img/notebook1.jpg" class="card-img-top" alt="Notebook1">
     <div class="card-body">
@@ -35,7 +42,7 @@
       Memoria (RAM) 4GB
       Procesador AMD Dual-Core serie
       Tamaño de pantalla: 14"</p>
-      <a href="vistaproducto.php"><button type="button" class="btn btn-success">VER MÁS</button></a>
+      <a href="vistaproducto.php"><button type="button" class="btn colorVioleta">VER MÁS</button></a>
         </div>
   </div>
   <div class="card">
@@ -43,7 +50,7 @@
     <div class="card-body">
       <h5 class="card-title">Notebook CX</h5>
       <p class="card-text">Pantalla: 11.6” - Formato 16:9, Procesador: Intel Atom x5 - Z8350 1.44 Ghz, Memoria RAM: 2GB DDR3L, Almacenamiento: 32GB, Sistema operativo: Windows 10 Home.</p>
-      <a href="vistaproducto.php"><button type="button" class="btn btn-success">VER MÁS</button></a>
+      <a href="vistaproducto.php"><button type="button" class="btn colorVioleta">VER MÁS</button></a>
   </div>
   </div>
   <div class="card">
@@ -51,19 +58,21 @@
     <div class="card-body">
       <h5 class="card-title">Notebook HP</h5>
       <p class="card-text">HP ProBook 450 G5 Laptop (2ST09UT#ABA) Intel i5-8250U, 8GB RAM, 256GB SSD, 15.6-in FHD 1920x1080, Win10 Pro.</p>
-      <a href="vistaproducto.php"><button type="button" class="btn btn-success">VER MÁS</button></a>
+      <a href="vistaproducto.php"><button type="button" class="btn colorVioleta">VER MÁS</button></a>
     </div>
   </div>
 </div>
 <br>
 <!-- PC ESCRITORIO -->
-<div id="categoriapcdeescritorio" class="card-deck">
+<h2 id="categoriapcdeescritorio">PC Escritorio</h2>
+<br>
+<div class="card-deck">
   <div class="card">
     <img src="img/pc1.jpg" class="card-img-top" alt="pc1">
     <div class="card-body">
       <h5 class="card-title">PC Completa Hogar</h5>
       <p class="card-text">Rendimiento: Pc de escritorio equipada con un potente Procesador Intel Core i5, 8GB de memoria RAM (expansible a 32GB) y almacenamiento SSD de 240GB.</p>
-      <a href="vistaproducto.php"><button type="button" class="btn btn-success">VER MÁS</button></a>
+      <a href="vistaproducto.php"><button type="button" class="btn colorVioleta">VER MÁS</button></a>
     </div>
   </div>
   <div class="card">
@@ -71,27 +80,29 @@
     <div class="card-body">
       <h5 class="card-title">PC Completa Oficina</h5>
       <p class="card-text">PC ideal para disfrutar de tus actividades diarias de ocio y de oficina. Cuenta con un poderoso micro procesador capaz de brindar un rendimiento óptimo en aplicaciones de todo tipo e inclusive disfrutar de algunos videojuegos.</p>
-      <a href="vistaproducto.php"><button type="button" class="btn btn-success">VER MÁS</button></a>
+      <a href="vistaproducto.php"><button type="button" class="btn colorVioleta">VER MÁS</button></a>
     </div>
   </div>
   <div class="card">
     <img src="img/pc3.jpg" class="card-img-top" alt="pc3">
     <div class="card-body">
-      <h5 class="card-title">Notebook HP</h5>
-      <p class="card-text">HP ProBook 450 G5 Laptop (2ST09UT#ABA) Intel i5-8250U, 8GB RAM, 256GB SSD, 15.6-in FHD 1920x1080, Win10 Pro.</p>
-      <a href="vistaproducto.php"><button type="button" class="btn btn-success">VER MÁS</button></a>
+      <h5 class="card-title">PC Intel Core i5 9400</h5>
+      <p class="card-text">Una Pc con óptimos componentes para llevar tu productividad al límite, trabajar con audio, imágenes o demás software de alta exigencia. Intel jamás fué tan potente como en su nueva generación de procesadores CoffeeLake. </p>
+      <a href="vistaproducto.php"><button type="button" class="btn colorVioleta">VER MÁS</button></a>
     </div>
   </div>
 </div>
 <br>
 <!-- TECLADOS -->
-<div id="categoriateclados" class="card-deck">
+<h2 id="categoriateclados">Teclados</h2>
+<br>
+<div class="card-deck">
   <div class="card">
     <img src="img/teclado1.jpg" class="card-img-top" alt="teclado1">
     <div class="card-body">
       <h5 class="card-title">Teclado Logitech</h5>
       <p class="card-text">Este teclado de 87 teclas brinda todo lo que un jugador profesional exige, sin necesidad del teclado numérico. Alloy FPS Pro cuenta con los interruptores mecánicos con cables con gran capacidad de respuesta CHERRY® MX.</p>
-      <a href="vistaproducto.php"><button type="button" class="btn btn-success">VER MÁS</button></a>
+      <a href="vistaproducto.php"><button type="button" class="btn colorVioleta">VER MÁS</button></a>
         </div>
   </div>
   <div class="card">
@@ -99,7 +110,7 @@
     <div class="card-body">
       <h5 class="card-title">Teclado Razer</h5>
       <p class="card-text">Este teclado alto rendimiento hará que disfrutes de horas ilimitadas de juego. Está diseñado especialmente para que puedas expresar tanto tus habilidades como tu estilo.</p>
-      <a href="vistaproducto.php"><button type="button" class="btn btn-success">VER MÁS</button></a>
+      <a href="vistaproducto.php"><button type="button" class="btn colorVioleta">VER MÁS</button></a>
   </div>
   </div>
   <div class="card">
@@ -107,7 +118,7 @@
     <div class="card-body">
       <h5 class="card-title">Teclado Logitech Mini</h5>
       <p class="card-text">HP ProBook 450 G5 Laptop (2ST09UT#ABA) Intel i5-8250U, 8GB RAM, 256GB SSD, 15.6-in FHD 1920x1080, Win10 Pro.</p>
-      <a href="vistaproducto.php"><button type="button" class="btn btn-success">VER MÁS</button></a>
+      <a href="vistaproducto.php"><button type="button" class="btn colorVioleta">VER MÁS</button></a>
     </div>
   </div>
 </div>
