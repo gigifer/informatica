@@ -25,7 +25,9 @@
 <div class="container">
 
 <!-- NOTEBOOKS -->
-<div id="categorianotebooks" class="card-deck">
+<h2 id="categorianotebooks">Notebooks</h2>
+<br>
+<div class="card-deck">
   <div class="card">
     <img src="img/notebook1.jpg" class="card-img-top" alt="Notebook1">
     <div class="card-body">
@@ -57,7 +59,9 @@
 </div>
 <br>
 <!-- PC ESCRITORIO -->
-<div id="categoriapcdeescritorio" class="card-deck">
+<h2 id="categoriapcdeescritorio">PC Escritorio</h2>
+<br>
+<div class="card-deck">
   <div class="card">
     <img src="img/pc1.jpg" class="card-img-top" alt="pc1">
     <div class="card-body">
@@ -77,15 +81,17 @@
   <div class="card">
     <img src="img/pc3.jpg" class="card-img-top" alt="pc3">
     <div class="card-body">
-      <h5 class="card-title">Notebook HP</h5>
-      <p class="card-text">HP ProBook 450 G5 Laptop (2ST09UT#ABA) Intel i5-8250U, 8GB RAM, 256GB SSD, 15.6-in FHD 1920x1080, Win10 Pro.</p>
+      <h5 class="card-title">PC Intel Core i5 9400</h5>
+      <p class="card-text">Una Pc con óptimos componentes para llevar tu productividad al límite, trabajar con audio, imágenes o demás software de alta exigencia. Intel jamás fué tan potente como en su nueva generación de procesadores CoffeeLake. </p>
       <a href="vistaproducto.php"><button type="button" class="btn colorVioleta">VER MÁS</button></a>
     </div>
   </div>
 </div>
 <br>
 <!-- TECLADOS -->
-<div id="categoriateclados" class="card-deck">
+<h2 id="categoriateclados">Teclados</h2>
+<br>
+<div class="card-deck">
   <div class="card">
     <img src="img/teclado1.jpg" class="card-img-top" alt="teclado1">
     <div class="card-body">
