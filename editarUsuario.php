@@ -8,7 +8,7 @@
       <link rel="stylesheet" href="style.css">
       <link href="https://fonts.googleapis.com/css?family=Playfair+Display|Righteous&display=swap" rel="stylesheet">
       <link href="https://fonts.googleapis.com/css?family=Raleway:400,700&display=swap" rel="stylesheet">
-      <title>Mi perfil</title>
+      <title>Editar perfil</title>
       <script src="https://kit.fontawesome.com/acf02b5d89.js" crossorigin="anonymous"></script>
     </head>
 
@@ -35,7 +35,9 @@
       <div class="datosUsuario row">
         <div class="col-ms-12 col-md-4 col-lg-4 fotoUsuario">
           <i class="fas fa-portrait"></i><br><br>
-        <div class="boton">  <button type="submit" class="btn">Editar Perfil</button>        </div>
+        <div class="boton">
+           <input type="file" id="fotoPerfil" name="imagen" class="btn">
+           <button type="submit" class="btn">Guardar cambios</button>       </div>
         </div>
         <div class="col-ms-12 col-md-8 col-lg-8 formularioDatos">
           <form>
