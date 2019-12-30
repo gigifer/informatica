@@ -8,7 +8,7 @@
       <link rel="stylesheet" href="style.css">
       <link href="https://fonts.googleapis.com/css?family=Playfair+Display|Righteous&display=swap" rel="stylesheet">
       <link href="https://fonts.googleapis.com/css?family=Raleway:400,700&display=swap" rel="stylesheet">
-      <title>Mi perfil</title>
+      <title>Editar perfil</title>
       <script src="https://kit.fontawesome.com/acf02b5d89.js" crossorigin="anonymous"></script>
     </head>
 

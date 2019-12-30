@@ -44,24 +44,24 @@ session_start();
         <div class="col-ms-12 col-md-8 col-lg-8 formularioDatos">
           <form>
             <div class="form-group">
-              <label for="nombre">Nombre</label>
-              <input type="text" class="form-control">
+              <label for="nombre">Nombre:</label><br>
+              <label for="nombre">Nombre de uss</label>
             </div>
             <div class="form-group">
-              <label for="apellido">Apellido</label>
-              <input type="text" class="form-control" id="formGroupExampleInput2">
+              <label for="apellido">Apellido:</label><br>
+              <label for="apellido">Apellido del uss</label>
             </div>
             <div class="form-group">
-              <label for="nacimiento">Fecha de nacimiento</label>
-              <input type="text" class="form-control" id="formGroupExampleInput2">
+              <label for="nacimiento">Fecha de nacimiento:</label><br>
+              <label for="nacimiento">00/00/0000</label>
             </div>
             <div class="form-group">
-              <label for="direccion">Dirección</label>
-              <input type="text" class="form-control" id="formGroupExampleInput2">
+              <label for="direccion">Dirección:</label><br>
+              <label for="direccion">Dirección del uss</label>
             </div>
             <div class="form-group">
-              <label for="email">Email</label>
-              <input type="text" class="form-control" id="formGroupExampleInput2">
+              <label for="email">Email:</label><br>
+              <label for="email">Email@usuario.com.ar</label>
             </div>
           </form>
         </div>
