@@ -9,7 +9,7 @@ $contraseña = "";
     if($_POST){
       global $email;
       global $errores;
-      //validar el formato de email, que no exista el email y persistir el dato por si se quiere cambiar algo
+      //validar el formato de email, que exista el email y persistir el dato por si se quiere cambiar algo
       if(filter_var($_POST["email"], FILTER_VALIDATE_EMAIL) == true){
         $arrayUsuarios = file_get_contents("usuarios.json");
         $usuarios = json_decode($arrayUsuarios, true);
@@ -126,10 +126,10 @@ $contraseña = "";
                     <input type="email" class="form-control" name="email" value="<?=$email;?>" placeholder="E-mail">
                   </div>
                   <div class="col-12  ">
-                    <input type="password" class="form-control" name="contraseña" value="<?=$contraseña?>" placeholder="Contraseña">
+                    <input type="password" class="form-control" name="contraseña" value="<?=$contraseña?>" placeholder="Nueva contraseña">
                   </div>
                   <div class="col-12  ">
-                    <input type="password" class="form-control" name="repetirContraseña" value="<?=$contraseña?>" placeholder="Confirmar contraseña">
+                    <input type="password" class="form-control" name="repetirContraseña" value="<?=$contraseña?>" placeholder="Confirmar nueva contraseña">
                   </div>
 
               </div>
