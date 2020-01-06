@@ -96,7 +96,7 @@ $errores = [];
               </form>
 
             <div class="cuenta col-xs-5 col-lg-6">
-            <a href="#"><p>Olvidé mi contraseña</p></a>
+            <a href="recuperarContraseña.php"><p>Olvidé mi contraseña</p></a>
             <a href="registro.php"><p>No tengo cuenta</p></a>
             </div>
 
