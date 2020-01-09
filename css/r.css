@@ -55,3 +55,8 @@ body{
 .centrar{
   margin: 0 auto;
 }
+
+
+.boton input{
+  margin: 3vh 1vh 3vh 0;
+}
