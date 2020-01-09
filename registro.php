@@ -195,8 +195,6 @@ $contraseña = "";
                       <input type="file" id="fotoPerfil" name="imagen">
                     </div>
                   </div>
-
-
               </div>
             </div>
             <div class="boton">
