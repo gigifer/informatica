@@ -1,5 +1,6 @@
 <?php
 session_start();
+if(isset($_SESSION["usuario"])){
 ?>
 
 <!DOCTYPE html>
@@ -12,7 +13,7 @@ session_start();
       <link rel="stylesheet" href="style.css">
       <link href="https://fonts.googleapis.com/css?family=Playfair+Display|Righteous&display=swap" rel="stylesheet">
       <link href="https://fonts.googleapis.com/css?family=Raleway:400,700&display=swap" rel="stylesheet">
-      <title>Mi perfil</title>
+      <title>Editar perfil</title>
       <script src="https://kit.fontawesome.com/acf02b5d89.js" crossorigin="anonymous"></script>
     </head>
 
@@ -39,29 +40,31 @@ session_start();
       <div class="datosUsuario row">
         <div class="col-ms-12 col-md-4 col-lg-4 fotoUsuario">
           <i class="fas fa-portrait"></i><br><br>
-        <div class="boton"><a href="editarUsuario.php"><button type="submit" class="btn">Editar Perfil</button></a>          </div>
+        <div class="boton">
+           <input type="file" id="fotoPerfil" name="imagen" class="btn">
+           <button type="submit" class="btn">Guardar cambios</button>       </div>
         </div>
         <div class="col-ms-12 col-md-8 col-lg-8 formularioDatos">
           <form>
             <div class="form-group">
-              <label for="nombre">Nombre:</label><br>
-              <label for="nombre">Nombre de uss</label>
+              <label for="nombre">Nombre</label>
+              <input type="text" class="form-control">
             </div>
             <div class="form-group">
-              <label for="apellido">Apellido:</label><br>
-              <label for="apellido">Apellido del uss</label>
+              <label for="apellido">Apellido</label>
+              <input type="text" class="form-control" id="formGroupExampleInput2">
             </div>
             <div class="form-group">
-              <label for="nacimiento">Fecha de nacimiento:</label><br>
-              <label for="nacimiento">00/00/0000</label>
+              <label for="nacimiento">Fecha de nacimiento</label>
+              <input type="text" class="form-control" id="formGroupExampleInput2">
             </div>
             <div class="form-group">
-              <label for="direccion">Dirección:</label><br>
-              <label for="direccion">Dirección del uss</label>
+              <label for="direccion">Dirección</label>
+              <input type="text" class="form-control" id="formGroupExampleInput2">
             </div>
             <div class="form-group">
-              <label for="email">Email:</label><br>
-              <label for="email">Email@usuario.com.ar</label>
+              <label for="email">Email</label>
+              <input type="text" class="form-control" id="formGroupExampleInput2">
             </div>
           </form>
         </div>
@@ -71,3 +74,6 @@ session_start();
       <?php include ("footer.php") ?>
         </body>
       </html>
+<?php
+}
+?>

@@ -1,50 +1,22 @@
 <?php
 session_start();
 $errores = array();
-$usuario = "";
 $email = "";
 $contraseña = "";
 
-  function validarUsuario(){
-    $patronUsuario = "/^[a-z0-9_-]{8,16}$/";
-    global $errores;
-    if($_POST){
-      //validar usuario con expresion regular
-      if(!preg_match($patronUsuario, $_POST["usuario"])){
-        $errores[] = "El nombre de usuario debe tener entre 8 y 16 carácteres, puede contener minúsculas, números, un guión bajo y/o guión medio";
-        $usuario = "";
-      }
-      //validar que no exista el nombre de usuario y persistir el dato por si se quiere cambiar algo
-      else{
-        global $usuario;
-        $arrayUsuarios = file_get_contents("usuarios.json");
-        $usuarios = json_decode($arrayUsuarios, true);
-        foreach ($usuarios as $user) {
-          if ($_POST["usuario"] == $user["usuario"]) {
-            $errores[] = "El nombre de usuario ya existe";
-            $usuario = "";
-            break;
-          }
-          else{
-            $usuario = $_POST["usuario"];
-          }
-        }
-      }
-    }
-  }
 
   function validarEmail(){
     if($_POST){
       global $email;
       global $errores;
-      //validar el formato de email, que no exista el email y persistir el dato por si se quiere cambiar algo
+      //validar el formato de email, que exista el email y persistir el dato por si se quiere cambiar algo
       if(filter_var($_POST["email"], FILTER_VALIDATE_EMAIL) == true){
         $arrayUsuarios = file_get_contents("usuarios.json");
         $usuarios = json_decode($arrayUsuarios, true);
         foreach ($usuarios as $user) {
-          if ($_POST["email"] == $user["email"]) {
-            $errores[] = "El email ya se encuentra registrado";
-            $usuario = "";
+          if ($_POST["email"] != $user["email"]) {
+            $errores[] = "El email no se encuentra registrado";
+            $email = "";
             break;
           }
           else{
@@ -69,7 +41,6 @@ $contraseña = "";
                       NO puede tener otros símbolos.";
         $contraseña = "";
       }
-
       //validar que las contraseñas sean iguales
       elseif($_POST["contraseña"] != $_POST["repetirContraseña"]){
         global $errores;
@@ -77,7 +48,6 @@ $contraseña = "";
       }
     }
   }
-
   function mostrarErrores(){
     global $errores;
     echo '<br>';
@@ -89,28 +59,6 @@ $contraseña = "";
     }
   }
 
-  function validarArchivos(){
-    if($_FILES){
-      global $errores;
-      //no tienen que haber errores registrados
-      if (empty($errores)) {
-        if (!empty($_FILES["imagen"]["name"])) {
-          if ($_FILES["imagen"]["error"] != 0) {
-            $errores[] = "La imagen de perfil no se ha subido correctamente";
-          }
-          else{
-            $extension = pathinfo($_FILES["imagen"]["name"], PATHINFO_EXTENSION);
-            if ($extension != "jpg" && $extension != "jpeg" && $extension != "png") {
-              $errores[] = "La imagen debe ser de tipo jpg, jpeg o png";
-            }
-            else{
-              move_uploaded_file($_FILES["imagen"]["tmp_name"], "files/imagen." . $extension);
-            }
-          }
-        }
-      }
-    }
-  }
 
   function registrarUsuario(){
     if($_POST){
@@ -155,7 +103,7 @@ $contraseña = "";
     <link rel="stylesheet" href="css/r.css">
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/acf02b5d89.js" crossorigin="anonymous"></script>
-    <title>Registro - Mapache</title>
+    <title>Recuperar contraseña- Mapache</title>
   </head>
   <body>
     <!--header-->
@@ -164,41 +112,27 @@ $contraseña = "";
     <div class="container-fluid">
       <div class="container">
         <div class="todo">
-        <h2>Completá tus datos</h2><br>
+        <h2>Recuperá tu cuenta</h2><br>
         <div class="centrar col-lg-6">
           <div class="cuadro">
             <?php
-            validarUsuario();
             validarEmail();
             validarContraseña();
-            validarArchivos();
             registrarUsuario();
             ?>
-            <form class="" action="registro.php" method="POST" enctype="multipart/form-data">
+            <form class="" action="recuperarContraseña.php" method="POST" enctype="multipart/form-data">
               <div class="row">
-                  <div class="col-12  ">
-                    <input type="text" class="form-control" name="usuario" value="<?=$usuario;?>" placeholder="Usuario">
-                  </div>
                   <div class="col-12  ">
                     <input type="email" class="form-control" name="email" value="<?=$email;?>" placeholder="E-mail">
                   </div>
                   <div class="col-12  ">
-                    <input type="password" class="form-control" name="contraseña" value="<?=$contraseña?>" placeholder="Contraseña">
+                    <input type="password" class="form-control" name="contraseña" value="<?=$contraseña?>" placeholder="Nueva contraseña">
                   </div>
                   <div class="col-12  ">
-                    <input type="password" class="form-control" name="repetirContraseña" value="<?=$contraseña?>" placeholder="Confirmar contraseña">
+                    <input type="password" class="form-control" name="repetirContraseña" value="<?=$contraseña?>" placeholder="Confirmar nueva contraseña">
                   </div>
-                  <div class=" col-12 ">
-                    <div class="imagenPerfil">
-                      <label for="fotoPerfil">Adjuntá tu foto de perfil</label>
-                      <input type="file" id="fotoPerfil" name="imagen">
-                    </div>
-                  </div>
+
               </div>
-            </div>
-            <div class="boton">
-                <input type="checkbox" name="recordarme" value="">Recordarme
-                <button type="submit" class="btn">Ingresar</button>
             </div>
 
 
@@ -206,13 +140,10 @@ $contraseña = "";
             mostrarErrores();
             ?>
             <div class="boton">
-              <button type="submit" class="btn">Crear Cuenta</button>
+              <button type="submit" class="btn">Cambiar contraseña</button>
               </form>
             </div>
 
-            <div class="cuenta col-xs-5 col-lg-6">
-            <a href="login.php"><p>Ya tengo cuenta</p></a>
-            </div>
           </div>
         </div>
       </div>

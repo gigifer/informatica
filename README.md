@@ -11,7 +11,7 @@ Grupo Apaches:
   Leonel Lazcano
   María Caro Pómpolo
   
-  
+  Diagrama de Clases : https://docs.google.com/spreadsheets/d/1EaolFh0n6_fY_LVLMRuvEMvlhLDmrfzhrkO27_6vsV0/edit?usp=sharing
 -----------------------------------------------
 Incluye: 
 
