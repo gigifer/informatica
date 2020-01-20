@@ -32,17 +32,17 @@ class Usuario {
     $this->contrasenia = $contrasenia;
   }
   public function __construct() {
-    // $this->$id_usuario = NULL;
     $this->nombre_usuario = NULL;
     $this->email = NULL;
     $this->contrasenia = NULL;
+    $this->foto =NULL;
   }
 
-  public function nuevoUsuario($nombre_usuario, $email, $contrasenia){
+  public function nuevoUsuario($nombre_usuario, $email, $contrasenia,$foto){
     global $pdo;
-    $query = 'INSERT INTO usuarios (nombre_usuario, email, contrasenia) VALUES (:nombre_usuario, :email, :contrasenia)';
+    $query = 'INSERT INTO usuarios (nombre_usuario, email, contrasenia, foto) VALUES (:nombre_usuario, :email, :contrasenia, :foto)';
     $hash = password_hash($contrasenia, PASSWORD_DEFAULT);
-    $values = array(':nombre_usuario' => $nombre_usuario, ':email' => $email, ':contrasenia' => $hash);
+    $values = array(':nombre_usuario' => $nombre_usuario, ':email' => $email, ':contrasenia' => $hash, ':foto' => $foto);
 
     try{
       $res = $pdo->prepare($query);
@@ -65,6 +65,29 @@ class Usuario {
 	  }
     catch (PDOException $e){
       throw new Exception('Error mientras se buscaba el usuario en la base de datos');
+	  }
+
+    $fila = $res->fetch(PDO::FETCH_ASSOC);
+
+    if (is_array($fila))
+  	{
+  		return true;
+  	}
+
+  	return false;
+  }
+
+  public function existeEmail($email){
+    global $pdo;
+    $query = 'SELECT * FROM usuarios WHERE (email = :email)';
+    $values = array(':email' => $email);
+
+    try{
+      $res = $pdo->prepare($query);
+		  $res->execute($values);
+	  }
+    catch (PDOException $e){
+      throw new Exception('Error mientras se buscaba el email en la base de datos');
 	  }
 
     $fila = $res->fetch(PDO::FETCH_ASSOC);

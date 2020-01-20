@@ -43,18 +43,16 @@ $contraseña = "";
       global $errores;
       //validar el formato de email, que no exista el email y persistir el dato por si se quiere cambiar algo
       if(filter_var($_POST["email"], FILTER_VALIDATE_EMAIL) == true){
-        $arrayUsuarios = file_get_contents("usuarios.json");
-        $usuarios = json_decode($arrayUsuarios, true);
-        foreach ($usuarios as $user) {
-          if ($_POST["email"] == $user["email"]) {
-            $errores[] = "El email ya se encuentra registrado";
-            $usuario = "";
-            break;
-          }
+        $gestor_usuarios = new Usuario();
+
+        if ($gestor_usuarios->existeEmail($_POST["email"])) {
+          $errores[] = "El email ya se encuentra registrado";
+          $email = "";
+          return false;
+        }
           else{
             $email = $_POST["email"];
           }
-        }
       }
       else{
         $errores[] = "El email no tiene el formato correcto";
@@ -108,7 +106,10 @@ $contraseña = "";
               $errores[] = "La imagen debe ser de tipo jpg, jpeg o png";
             }
             else{
-              move_uploaded_file($_FILES["imagen"]["tmp_name"], "files/imagen." . $extension);
+              $gestor_usuarios = new Usuario();
+              $imagen = $_FILES['imagen']['tmp_name'];
+              $foto = addslashes(file_get_contents($imagen));
+
             }
           }
         }
@@ -120,17 +121,15 @@ $contraseña = "";
     if($_POST){
       global $errores;
       $usuario = new Usuario();
-      $arrayUsuario = [];
-      $usuariosArray = [];
         //no tiene que haber errores (incluso al subir la foto de perfil)
         if(empty($errores)){
           try {
-            $idNuevoUsuario = $usuario->nuevoUsuario($_POST["usuario"], $_POST["email"], password_hash($_POST["contrasenia"], PASSWORD_DEFAULT));
+            $idNuevoUsuario = $usuario->nuevoUsuario($_POST["usuario"], $_POST["email"], $_POST["contrasenia"], $_FILES['imagen']['tmp_name']);
           } catch (Exception $e) {
             echo $e->getMessage();
             die();
           }
-          header("location: login.php");
+          header("location: index.php");
           exit;
         }
     }
