@@ -1,9 +1,15 @@
 <?php
 session_start();
+
+define('__ROOT__', dirname(__FILE__));
+require_once(__ROOT__.'/clases/'.'conexion.php');
+require_once(__ROOT__.'/clases/'.'usuarios.php');
+
 $errores = array();
 $usuario = "";
 $email = "";
 $contraseña = "";
+
 
   function validarUsuario(){
     $patronUsuario = "/^[a-z0-9_-]{8,16}$/";
@@ -17,17 +23,15 @@ $contraseña = "";
       //validar que no exista el nombre de usuario y persistir el dato por si se quiere cambiar algo
       else{
         global $usuario;
-        $arrayUsuarios = file_get_contents("usuarios.json");
-        $usuarios = json_decode($arrayUsuarios, true);
-        foreach ($usuarios as $user) {
-          if ($_POST["usuario"] == $user["usuario"]) {
-            $errores[] = "El nombre de usuario ya existe";
-            $usuario = "";
-            break;
-          }
-          else{
-            $usuario = $_POST["usuario"];
-          }
+        $gestor_usuarios = new Usuario();
+
+        if ($gestor_usuarios->existeUsuario($_POST["usuario"])) {
+          $errores[] = "El nombre de usuario ya existe";
+          $usuario = "";
+          return false;
+        }
+        else {
+          $usuario = $_POST["usuario"];
         }
       }
     }
@@ -39,18 +43,16 @@ $contraseña = "";
       global $errores;
       //validar el formato de email, que no exista el email y persistir el dato por si se quiere cambiar algo
       if(filter_var($_POST["email"], FILTER_VALIDATE_EMAIL) == true){
-        $arrayUsuarios = file_get_contents("usuarios.json");
-        $usuarios = json_decode($arrayUsuarios, true);
-        foreach ($usuarios as $user) {
-          if ($_POST["email"] == $user["email"]) {
-            $errores[] = "El email ya se encuentra registrado";
-            $usuario = "";
-            break;
-          }
+        $gestor_usuarios = new Usuario();
+
+        if ($gestor_usuarios->existeEmail($_POST["email"])) {
+          $errores[] = "El email ya se encuentra registrado";
+          $email = "";
+          return false;
+        }
           else{
             $email = $_POST["email"];
           }
-        }
       }
       else{
         $errores[] = "El email no tiene el formato correcto";
@@ -59,19 +61,19 @@ $contraseña = "";
     }
   }
 
-  function validarContraseña(){
-    $patronContraseña = "/^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$/";
+  function validarContrasenia(){
+    $patronContrasenia = "/^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$/";
     if($_POST){
       //validar contraseña con expresion regular
-      if(!preg_match($patronContraseña, $_POST["contraseña"])){
+      if(!preg_match($patronContrasenia, $_POST["contrasenia"])){
         global $errores;
         $errores[] = "La contraseña debe tener entre 8 y 16 caracteres, al menos un número, al menos una minúscula y al menos una mayúscula.
                       NO puede tener otros símbolos.";
-        $contraseña = "";
+        $contrasenia = "";
       }
 
       //validar que las contraseñas sean iguales
-      elseif($_POST["contraseña"] != $_POST["repetirContraseña"]){
+      elseif($_POST["contrasenia"] != $_POST["repetirContrasenia"]){
         global $errores;
         $errores[] = "Las contraseñas no coinciden";
       }
@@ -104,7 +106,10 @@ $contraseña = "";
               $errores[] = "La imagen debe ser de tipo jpg, jpeg o png";
             }
             else{
-              move_uploaded_file($_FILES["imagen"]["tmp_name"], "files/imagen." . $extension);
+              $gestor_usuarios = new Usuario();
+              $imagen = $_FILES['imagen']['tmp_name'];
+              $foto = addslashes(file_get_contents($imagen));
+
             }
           }
         }
@@ -115,26 +120,16 @@ $contraseña = "";
   function registrarUsuario(){
     if($_POST){
       global $errores;
-      $arrayUsuario = [];
-      $usuariosArray = [];
+      $usuario = new Usuario();
         //no tiene que haber errores (incluso al subir la foto de perfil)
         if(empty($errores)){
-          $arrayUsuario["usuario"] = $_POST["usuario"];
-          $arrayUsuario["email"] = $_POST["email"];
-          //si pongo "contraseña" como clave en el json recibe caracteres extraños
-          $arrayUsuario["contrasenia"] = password_hash($_POST["contraseña"], PASSWORD_DEFAULT);
-          $usuarios = file_get_contents("usuarios.json");
-          $usuariosArray = json_decode($usuarios, true);
-          //si no valido el array_push me da un warning no reconociendo el usuariosArray vacio como un array
-          if($usuariosArray==null){
-            $usuariosArray[] = $arrayUsuario;
+          try {
+            $idNuevoUsuario = $usuario->nuevoUsuario($_POST["usuario"], $_POST["email"], $_POST["contrasenia"], $_FILES['imagen']['tmp_name']);
+          } catch (Exception $e) {
+            echo $e->getMessage();
+            die();
           }
-          else{
-          array_push($usuariosArray, $arrayUsuario);
-          }
-          $usuariosFinal = json_encode($usuariosArray);
-          file_put_contents("usuarios.json", $usuariosFinal . PHP_EOL);
-          header("location: login.php");
+          header("location: index.php");
           exit;
         }
     }
@@ -170,23 +165,24 @@ $contraseña = "";
             <?php
             validarUsuario();
             validarEmail();
-            validarContraseña();
+            validarContrasenia();
             validarArchivos();
             registrarUsuario();
             ?>
             <form class="" action="registro.php" method="POST" enctype="multipart/form-data">
               <div class="row">
                   <div class="col-12  ">
-                    <input type="text" class="form-control" name="usuario" value="<?=$usuario;?>" placeholder="Usuario">
+                    <!-- <input type="text" class="form-control" name="usuario"  placeholder="Usuario"> -->
+                    <input type="text" class="form-control" name="usuario" placeholder="Usuario">
                   </div>
                   <div class="col-12  ">
-                    <input type="email" class="form-control" name="email" value="<?=$email;?>" placeholder="E-mail">
+                    <input type="email" class="form-control" name="email" placeholder="E-mail">
                   </div>
                   <div class="col-12  ">
-                    <input type="password" class="form-control" name="contraseña" value="<?=$contraseña?>" placeholder="Contraseña">
+                    <input type="password" class="form-control" name="contrasenia" placeholder="Contraseña">
                   </div>
                   <div class="col-12  ">
-                    <input type="password" class="form-control" name="repetirContraseña" value="<?=$contraseña?>" placeholder="Confirmar contraseña">
+                    <input type="password" class="form-control" name="repetirContrasenia" placeholder="Confirmar contraseña">
                   </div>
                   <div class=" col-12 ">
                     <div class="imagenPerfil">
