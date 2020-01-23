@@ -94,6 +94,7 @@ $contraseña = "";
   function validarArchivos(){
     if($_FILES){
       global $errores;
+      global $foto;
       //no tienen que haber errores registrados
       if (empty($errores)) {
         if (!empty($_FILES["imagen"]["name"])) {
@@ -124,13 +125,15 @@ $contraseña = "";
         //no tiene que haber errores (incluso al subir la foto de perfil)
         if(empty($errores)){
           try {
-            $idNuevoUsuario = $usuario->nuevoUsuario($_POST["usuario"], $_POST["email"], $_POST["contrasenia"], $_FILES['imagen']['tmp_name']);
+            $idNuevoUsuario = $usuario->nuevoUsuario($_POST["usuario"], $_POST["email"], $_POST["contrasenia"],$foto);
           } catch (Exception $e) {
             echo $e->getMessage();
             die();
           }
+          $_SESSION["usuario"] = $_POST["usuario"];
           header("location: index.php");
           exit;
+
         }
     }
   }
