@@ -1,5 +1,8 @@
 <?php
 session_start();
+define('__ROOT__', dirname(__FILE__));
+require_once(__ROOT__.'/clases/'.'conexion.php');
+require_once(__ROOT__.'/clases/'.'usuarios.php');
 ?>
 
 <!DOCTYPE html>
@@ -38,7 +41,12 @@ session_start();
 
       <div class="datosUsuario row">
         <div class="col-ms-12 col-md-4 col-lg-4 fotoUsuario">
-          <i class="fas fa-portrait"></i><br><br>
+          <?php
+          $query = $pdo->prepare("select foto from usuarios");
+          $query->execute();  ?>
+          <img src="<?php $resultado = $query->fetch(PDO::FETCH_ASSOC);
+          $recuperarFoto = base64_encode($resultado['foto']);
+          echo $recuperarFoto;?>" alt=""> <br><br>
         <div class="boton"><a href="editarUsuario.php"><button type="submit" class="btn">Editar Perfil</button></a>          </div>
         </div>
         <div class="col-ms-12 col-md-8 col-lg-8 formularioDatos">
