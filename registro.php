@@ -197,7 +197,6 @@ $contraseña = "";
             </div>
             <div class="boton">
                 <input type="checkbox" name="recordarme" value="">Recordarme
-                <button type="submit" class="btn">Ingresar</button>
             </div>
 
 

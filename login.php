@@ -35,11 +35,11 @@ $errores = [];
           exit;
         }
       }
-      else{
-        $errores = ["usuario o contraseña incorrectos"];
-    }
+        else{
+          $errores = ["usuario o contraseña incorrectos"];
+        }
     /*else{
-        $errores[] = "El nombre de usuario y la contraseña son campos obligatorios";
+      $errores[] = "El nombre de usuario y la contraseña son campos obligatorios";
     }*/
   }
 
