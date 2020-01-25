@@ -7,26 +7,34 @@ require_once(__ROOT__.'/clases/'.'usuarios.php');
 
 $errores = [];
 
-  function verificarLogin(){
-    global $errores;
-    global $pdo;
-    if(!empty($_POST["usuario"])){
-      $query = 'SELECT * FROM usuarios WHERE (nombre_usuario = :nombre_usuario)';
-	    $values = array(':nombre_usuario' => $_POST["usuario"]);
+function buscarEmail(){
+  global $errores;
+  global $pdo;
+  if(!empty($_POST["email"])){
+    $query = 'SELECT * FROM usuarios WHERE (email = :email)';
+    $values = array(':email' => $_POST["email"]);
 
-	    try{
-        $res = $pdo->prepare($query);
-		    $res->execute($values);
-      }
-	    catch (PDOException $e){
-        throw new Exception('Error al buscar nombre en la base de datos');
-      }
+    try{
+      $res = $pdo->prepare($query);
+      $res->execute($values);
+    }
+    catch (PDOException $e){
+      throw new Exception('Error al buscar nombre en la base de datos');
+    }
 
-	    $row = $res->fetch(PDO::FETCH_ASSOC);
-   }
- }
+    $fila = $res->fetch(PDO::FETCH_ASSOC);
+
+    if (is_array($fila))
+    {
+      return true;
+    }
+
+    return false;
+  }
+}
 
   function validarContrasenia(){
+    global $pdo;
     $patronContrasenia = "/^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$/";
     if($_POST){
       //validar contraseña con expresion regular
@@ -45,8 +53,22 @@ $errores = [];
 
       else{
         $contrasenia = $_POST["contrasenia"];
-        global $contrasenia;
+        $query = 'UPDATE usuarios SET contrasenia = :contrasenia WHERE email = :email';
+        $hash = password_hash($contrasenia, PASSWORD_DEFAULT);
+        $values = array(':email' => $_POST["email"], ':contrasenia' => $hash);
+
+        try{
+          $res = $pdo->prepare($query);
+          $res->execute($values);
+        }
+        catch (PDOException $e){
+          throw new Exception('Error mientras se registraba el usuario en la base de datos');
+        }
+        header("location: login.php");
+        exit;
+
       }
+
     }
   }
 
@@ -61,33 +83,6 @@ $errores = [];
     }
   }
 
-  function cambiarContrasenia(){
-      global $contrasenia;
-      global $errores;
-      global $pdo;
-      
-        //no tiene que haber errores (incluso al subir la foto de perfil)
-        if(empty($errores)){
-          $query = 'update usuarios set contrasenia = :contrasenia where (nombre_usuario = :nombre_usuario)';
-          $hash = password_hash($contrasenia, PASSWORD_DEFAULT);
-          $values = array(':nombre_usuario' => $nombre_usuario, ':contrasenia' => $hash);
-
-          try{
-            $res = $pdo->prepare($query);
-        		$res->execute($values);
-        	}
-          catch (PDOException $e){
-            throw new Exception('Error mientras se registraba el usuario en la base de datos');
-        	}
-          return $pdo->lastInsertId();
-
-          $_SESSION["usuario"] = $_POST["usuario"];
-          header("location: index.php");
-          exit;
-
-        }
-
-  }
 
 
  ?>
@@ -117,14 +112,9 @@ $errores = [];
         <h2>Recuperá tu cuenta</h2><br>
         <div class="centrar col-lg-6">
           <div class="cuadro">
-            <?php
-
-            validarContrasenia();
-
-            ?>
-            <form class="" action="recuperarContraseña.php" method="POST" enctype="multipart/form-data">
-              <?php verificarLogin();
-              cambiarContrasenia();
+            <form class="" action="recuperarContraseña.php" method="POST">
+              <?php buscarEmail();
+                    validarContrasenia();
                ?>
               <div class="row">
                   <div class="col-12  ">
