@@ -35,7 +35,7 @@ if(isset($_SESSION["usuario"])){
             <div class="fuenteCarro">
               Producto
             </div>
-            <img id="productoCarro" src="fotoCarrito.jpg" alt="foto monitor">
+            <img id="productoCarro" src="/img/fotoCarrito.jpg" alt="foto monitor">
             <p>
               Monitor Samsung S24F350FH
               LED 23.5" negro 110V/220V (Bivolt)
