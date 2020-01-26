@@ -1,35 +1,49 @@
 <?php
 session_start();
+
+define('__ROOT__', dirname(__FILE__));
+require_once(__ROOT__.'/clases/'.'conexion.php');
+require_once(__ROOT__.'/clases/'.'usuarios.php');
+
 $errores = [];
 
   function verificarLogin(){
-    if($_POST){
-      global $errores;
-      $usuariosRegistrados = file_get_contents("usuarios.json");
-      $arrayUsuarios = json_decode($usuariosRegistrados, true);
-      if(!empty($_POST["usuario"]) && !empty($_POST["contraseña"])){
-        //recorro el array
-        foreach ($arrayUsuarios as $user) {
-          if ($_POST["usuario"] == $user["usuario"]) {
-            $_SESSION["usuario"] = $_POST["usuario"];
-            if(password_verify($_POST["contraseña"], $user["contrasenia"])){
-              $_SESSION["usuario"] = $user["usuario"];
-              if(isset($_POST["recordarme"])){
-                setcookie("nombreUsuario", $user["contrasenia"], time() + 60 * 60 * 24 * 7);
-              }
-              header("location: index.php");
-              exit;
-            }
+    global $errores;
+    global $pdo;
+    if(!empty($_POST["usuario"]) && !empty($_POST["contrasenia"])){
+      $query = 'SELECT * FROM usuarios WHERE (nombre_usuario = :nombre_usuario)';
+	    $values = array(':nombre_usuario' => $_POST["usuario"]);
+
+	    try{
+        $res = $pdo->prepare($query);
+		    $res->execute($values);
+      }
+	    catch (PDOException $e){
+        throw new Exception('Error al buscar nombre en la base de datos');
+      }
+
+	    $row = $res->fetch(PDO::FETCH_ASSOC);
+
+      if (is_array($row)){
+        if (password_verify($_POST["contrasenia"], $row['contrasenia'])){
+
+          $_SESSION["usuario"] = $row["nombre_usuario"];
+          if(isset($_POST["recordarme"])){
+            setcookie("nombreUsuario", $row["contrasenia"], time() + 60 * 60 * 24 * 7);
           }
-          else{
-          $errores = ["usuario o contraseña incorrectos"];
-          }
+          header("location: index.php");
+          exit;
         }
       }
-      else{
-        $errores[] = "El nombre de usuario y la contraseña son campos obligatorios";
-      }
-    }
+        else{
+          $errores = ["usuario o contraseña incorrectos"];
+        }
+    /*else{
+      $errores[] = "El nombre de usuario y la contraseña son campos obligatorios";
+    }*/
+  }
+
+
   }
 
 
@@ -78,10 +92,10 @@ $errores = [];
                   <?php verificarLogin(); ?>
                   <div class="row">
                     <div class="col-12">
-                      <input type="text" name="usuario" value="<?=(isset($_SESSION["usuario"])) ? $_SESSION["usuario"] : ""; ?>" class="form-control" placeholder="Usuario">
+                      <input type="text" name="usuario" class="form-control" placeholder="Usuario">
                     </div>
                     <div class="col-12">
-                      <input type="password" name="contraseña" value="" class="form-control" placeholder="Contraseña">
+                      <input type="password" name="contrasenia" class="form-control" placeholder="Contraseña">
                     </div>
                   </div>
               </div>
