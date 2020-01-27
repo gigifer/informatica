@@ -75,7 +75,12 @@ $categorias = $query->fetchAll(PDO::FETCH_ASSOC);
 
 //Listado de productos
 $query = $pdo->prepare(
-    'SELECT * FROM productos WHERE borrado IS NULL');
+    'SELECT productos.id_producto as ID, productos.nombre as Nombre, productos.descripcion as Descripcion, productos.pre_unitario as Precio, marcas.descripcion as Marca, categorias.descripcion as Categoria
+    FROM productos
+    LEFT JOIN marcas ON productos.id_marca = marcas.id_marca
+    LEFT JOIN categorias ON productos.id_categoria = categorias.id_categoria
+    WHERE productos.borrado is null
+    ORDER BY Categoria;');
 $query->execute();
 $productos = $query->fetchAll(PDO::FETCH_ASSOC);
 
@@ -125,15 +130,15 @@ ini_set('display_errors', 0);
         <tbody>
             <?php foreach ($productos as $producto) {?>
             <tr>
-                <td><?php echo $producto['nombre']?></td>
-                <td><?php echo $producto['descripcion']?></td>
-                <td><?php echo number_format($producto['pre_unitario'],2)?></td>
-                <td><?php echo $producto['id_marca']?></td>
-                <td><?php echo $producto['id_categoria']?></td>
+                <td><?php echo $producto['Nombre']?></td>
+                <td><?php echo $producto['Descripcion']?></td>
+                <td><?php echo number_format($producto['Precio'],2)?></td>
+                <td><?php echo $producto['Marca']?></td>
+                <td><?php echo $producto['Categoria']?></td>
                 <td>
-                    <a href="ABM.php?actions=edit&id=<?php echo $producto['id_producto']?>">Editar</a>
+                    <a href="ABM.php?actions=edit&id=<?php echo $producto['ID']?>">Editar</a>
                 </td><td>
-                    <a href="ABM.php?actions=delete&id=<?php echo $producto['id_producto']?>" onclick="return confirm('¿Desea eliminar?');">Borrar</a>
+                    <a href="ABM.php?actions=delete&id=<?php echo $producto['ID']?>" onclick="return confirm('¿Desea eliminar?');">Borrar</a>
                 </td>
             </tr>
             <?php } ?>
