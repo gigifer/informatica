@@ -136,9 +136,9 @@ ini_set('display_errors', 0);
                 <td><?php echo $producto['Marca']?></td>
                 <td><?php echo $producto['Categoria']?></td>
                 <td>
-                    <a href="ABM.php?actions=edit&id=<?php echo $producto['id_producto']?>">Editar</a>
+                    <a href="ABM.php?actions=edit&id=<?php echo $producto['ID']?>">Editar</a>
                 </td><td>
-                    <a href="ABM.php?actions=delete&id=<?php echo $producto['id_producto']?>" onclick="return confirm('¿Desea eliminar?');">Borrar</a>
+                    <a href="ABM.php?actions=delete&id=<?php echo $producto['ID']?>" onclick="return confirm('¿Desea eliminar?');">Borrar</a>
                 </td>
             </tr>
             <?php } ?>
