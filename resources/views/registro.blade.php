@@ -33,7 +33,7 @@
             validarArchivos();
             registrarUsuario();
             ?>
-            <form class="" action="registro.php" method="POST" enctype="multipart/form-data">
+            <form class="" action="registro" method="POST" enctype="multipart/form-data">
               <div class="row">
                   <div class="col-12  ">
                     <!-- <input type="text" class="form-control" name="usuario"  placeholder="Usuario"> -->

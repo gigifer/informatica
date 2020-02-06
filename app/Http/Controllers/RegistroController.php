@@ -90,6 +90,7 @@ class RegistroController extends Controller
           echo '<div class="alert alert-danger" role="alert">' . $errores[$i] . '</div>';
         }
         return view("registro");
+        exit;
       }
     }
 
